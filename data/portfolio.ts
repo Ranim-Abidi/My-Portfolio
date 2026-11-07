@@ -41,12 +41,12 @@ export const portfolioData: PortfolioData = {
       ],
     },
     socials: {
-      // TODO: Replace with your actual email address
-      email: 'ranim.abidi@esprit.tn',
+      // Primary contact email address
+      email: 'abidiranim237@gmail.com',
       // TODO: Replace with your actual LinkedIn profile URL
       linkedin: 'https://www.linkedin.com/in/ranim-abidi',
-      // TODO: Replace with your actual GitHub username URL
-      github: 'https://github.com/ranimabidi',
+      // GitHub profile URL
+      github: 'https://github.com/Ranim-Abidi',
       // TODO: Place your CV in /public/cv-ranim-abidi.pdf or set an external link
       cvUrl: '/cv-ranim-abidi.pdf',
     },
@@ -313,7 +313,7 @@ export const portfolioData: PortfolioData = {
       // TODO: Replace with your YouTube/Loom/Vimeo demo or local MP4 link
       videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       // TODO: Replace with your GitHub repository URL
-      githubUrl: 'https://github.com/ranimabidi/dejitalist',
+      githubUrl: 'https://github.com/Ranim-Abidi/dejitalist',
       caseStudy: {
         overview: {
           en: 'Dejitalist was built as a full-scale multi-tenant commerce engine tailored to modern digital retailers. Each merchant receives an isolated workspace, customizable product storefront, automated checkout flow, and live inventory auditing.',
@@ -394,7 +394,7 @@ export const portfolioData: PortfolioData = {
       // TODO: Replace with your YouTube/Loom/Vimeo demo or local MP4 link
       videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       // TODO: Replace with your GitHub repository URL
-      githubUrl: 'https://github.com/ranimabidi/dash-analytics',
+      githubUrl: 'https://github.com/Ranim-Abidi/dash-analytics',
       caseStudy: {
         overview: {
           en: 'DASH was conceived as a graduation-level system addressing operational transparency across international volunteering exchanges. It bridges data collection, audit validation, and executive KPI forecasting.',
@@ -471,7 +471,7 @@ export const portfolioData: PortfolioData = {
       // TODO: Replace with your YouTube/Loom/Vimeo demo or local MP4 link
       videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       // TODO: Replace with your GitHub repository URL
-      githubUrl: 'https://github.com/ranimabidi/eleganza-idss',
+      githubUrl: 'https://github.com/Ranim-Abidi/eleganza-idss',
       caseStudy: {
         overview: {
           en: 'Eleganza IDSS delivers predictive intelligence into retail inventory workflows. By coupling modern machine learning with an asynchronous API architecture, managers can run simulation scenarios before issuing supplier purchase orders.',
@@ -544,11 +544,11 @@ export const portfolioData: PortfolioData = {
       tags: ['Kubernetes', 'Terraform', 'ArgoCD', 'Docker', 'Helm', 'GitHub Actions', 'Prometheus'],
       cover: '/projects/gitops.webp',
       // TODO: Replace with your actual live production URL or demo cluster dashboard
-      liveUrl: 'https://github.com/ranimabidi/cloudnative-gitops',
+      liveUrl: 'https://github.com/Ranim-Abidi/cloudnative-gitops',
       // TODO: Replace with your YouTube/Loom/Vimeo demo or local MP4 link
       videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       // TODO: Replace with your GitHub repository URL
-      githubUrl: 'https://github.com/ranimabidi/cloudnative-gitops',
+      githubUrl: 'https://github.com/Ranim-Abidi/cloudnative-gitops',
       caseStudy: {
         overview: {
           en: 'A reference enterprise DevOps architecture enforcing Git as the single source of truth for both infrastructure provisioning and containerized microservice lifecycles.',
@@ -625,7 +625,7 @@ export const portfolioData: PortfolioData = {
       // TODO: Replace with your YouTube/Loom/Vimeo demo or local MP4 link
       videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       // TODO: Replace with your GitHub repository URL
-      githubUrl: 'https://github.com/ranimabidi/smartcv-ai',
+      githubUrl: 'https://github.com/Ranim-Abidi/smartcv-ai',
       caseStudy: {
         overview: {
           en: 'SmartCV combines modern natural language processing with intuitive recruitment dashboards, helping hiring teams discover high-potential cloud, devops and software talent objectively.',
