@@ -3,6 +3,11 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { UIProvider } from '@/context/UIContext';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import CommandPalette from '@/components/CommandPalette';
+import TerminalModal from '@/components/TerminalModal';
 import { portfolioData } from '@/data/portfolio';
 
 const inter = Inter({
@@ -19,8 +24,11 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ranimabidi.com'),
-  title: `${portfolioData.profile.name} (${portfolioData.profile.phoneticName}) | Cloud & DevOps Engineer`,
-  description: `${portfolioData.profile.name} is a Cloud & DevOps Engineering student at ESPRIT Tunis and Master candidate at ISI KEF. Specialized in Kubernetes, Terraform, Full-Stack SaaS and Applied AI.`,
+  title: {
+    default: `${portfolioData.profile.name} (${portfolioData.profile.phoneticName}) | Cloud & DevOps Engineer`,
+    template: `%s | ${portfolioData.profile.name} — Cloud & DevOps Hub`,
+  },
+  description: `${portfolioData.profile.name} is a Cloud & DevOps Engineering student at ESPRIT Tunis and Master candidate at ISI KEF. Living hub of verified work in Kubernetes, Terraform, Full-Stack SaaS, and Applied AI.`,
   keywords: [
     'Ranim Abidi',
     'Raneem Abidi',
@@ -44,9 +52,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     alternateLocale: ['fr_FR'],
     url: 'https://ranimabidi.com',
-    title: `${portfolioData.profile.name} | Cloud & DevOps Engineering Portfolio`,
+    title: `${portfolioData.profile.name} | Cloud & DevOps Engineering Hub`,
     description: portfolioData.profile.headline.en,
-    siteName: `${portfolioData.profile.name} Portfolio`,
+    siteName: `${portfolioData.profile.name} Engineering Hub`,
     images: [
       {
         url: '/og-image.jpg',
@@ -132,10 +140,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200 min-h-screen flex flex-col`}>
         <ThemeProvider>
           <LanguageProvider>
-            {children}
+            <UIProvider>
+              <Navbar />
+              <div id="main-content" className="flex-1">
+                {children}
+              </div>
+              <Footer />
+              <CommandPalette />
+              <TerminalModal />
+            </UIProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>
