@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="portraitBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <linearGradient id="aura" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" rx="40" fill="url(#portraitBg)"/>
+  <circle cx="300" cy="300" r="220" fill="url(#aura)" opacity="0.3"/>
+  <circle cx="300" cy="240" r="90" fill="#334155" stroke="url(#aura)" stroke-width="4"/>
+  <path d="M 160 490 C 170 380, 430 380, 440 490" fill="#1e293b" stroke="url(#aura)" stroke-width="3"/>
+  <text x="300" y="255" font-family="system-ui, sans-serif" font-size="54" font-weight="800" fill="#ffffff" text-anchor="middle">RA</text>
+  <text x="300" y="540" font-family="system-ui, sans-serif" font-size="22" font-weight="600" fill="#38bdf8" text-anchor="middle">Ranim Abidi &middot; Cloud &amp; DevOps</text>
+</svg>
