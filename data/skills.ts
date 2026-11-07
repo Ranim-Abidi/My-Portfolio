@@ -1,0 +1,298 @@
+import { SkillCategory } from '@/types/portfolio';
+
+export const skillCategoriesData: SkillCategory[] = [
+  {
+    id: 'cloud-devops',
+    title: {
+      en: 'Cloud & DevOps',
+      fr: 'Cloud & DevOps',
+    },
+    description: {
+      en: 'Infrastructure as Code, container orchestration, GitOps workflows and multi-cloud resilience.',
+      fr: 'Infrastructure as Code, orchestration de conteneurs, pratiques GitOps et haute disponibilité cloud.',
+    },
+    icon: 'Cloud',
+    skills: [
+      {
+        id: 'docker',
+        name: 'Docker',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'eleganza-idss-ml', 'cloudnative-gitops-pipeline', 'smartcv-semantic-ai'],
+        certificateIds: ['cert-docker-k8s'],
+      },
+      {
+        id: 'kubernetes',
+        name: 'Kubernetes',
+        level: 'Advanced',
+        isHighlight: true,
+        projectSlugs: ['cloudnative-gitops-pipeline'],
+        certificateIds: ['cert-docker-k8s'],
+      },
+      {
+        id: 'cicd',
+        name: 'CI/CD Pipelines (GitHub Actions)',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['dejitalist-saas', 'cloudnative-gitops-pipeline'],
+        certificateIds: ['cert-docker-k8s'],
+      },
+      {
+        id: 'terraform',
+        name: 'Terraform (IaC)',
+        level: 'Advanced',
+        isHighlight: true,
+        projectSlugs: ['cloudnative-gitops-pipeline'],
+        certificateIds: ['cert-terraform'],
+      },
+      {
+        id: 'linux',
+        name: 'Linux / Bash Scripting',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['cloudnative-gitops-pipeline', 'dash-analytics-hub'],
+        certificateIds: ['cert-docker-k8s'],
+      },
+      {
+        id: 'vercel',
+        name: 'Vercel / Cloudflare',
+        level: 'Expert',
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'smartcv-semantic-ai'],
+      },
+      {
+        id: 'aws',
+        name: 'AWS Core Services',
+        level: 'Advanced',
+        projectSlugs: ['cloudnative-gitops-pipeline'],
+        certificateIds: ['cert-aws-cloud'],
+      },
+      {
+        id: 'prometheus',
+        name: 'Prometheus & Grafana',
+        level: 'Proficient',
+        projectSlugs: ['cloudnative-gitops-pipeline'],
+      },
+      {
+        id: 'argocd',
+        name: 'ArgoCD / GitOps',
+        level: 'Proficient',
+        projectSlugs: ['cloudnative-gitops-pipeline'],
+      },
+    ],
+  },
+  {
+    id: 'backend',
+    title: {
+      en: 'Backend & APIs',
+      fr: 'Backend & APIs',
+    },
+    description: {
+      en: 'High-throughput microservices, REST/GraphQL standards, authentication protocols and clean architecture.',
+      fr: 'Microservices haute performance, architectures RESTful, protocoles d\'authentification et code maintenable.',
+    },
+    icon: 'Server',
+    skills: [
+      {
+        id: 'nodejs',
+        name: 'Node.js / Express',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+      },
+      {
+        id: 'fastapi',
+        name: 'FastAPI / Python',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['eleganza-idss-ml', 'smartcv-semantic-ai'],
+        certificateIds: ['cert-fastapi-ai'],
+      },
+      {
+        id: 'spring-boot',
+        name: 'Spring Boot (Java)',
+        level: 'Advanced',
+        projectSlugs: [],
+      },
+      {
+        id: 'microservices',
+        name: 'Microservices Architecture',
+        level: 'Advanced',
+        isHighlight: true,
+        projectSlugs: ['cloudnative-gitops-pipeline', 'eleganza-idss-ml', 'dejitalist-saas'],
+      },
+      {
+        id: 'auth-jwt',
+        name: 'JWT & OAuth2 Security',
+        level: 'Expert',
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+      },
+    ],
+  },
+  {
+    id: 'frontend',
+    title: {
+      en: 'Modern Frontend',
+      fr: 'Frontend Moderne',
+    },
+    description: {
+      en: 'Responsive, accessible, server-rendered web applications with motion design and design systems.',
+      fr: 'Applications web réactives, accessibles, optimisées SSR/SSG avec design system et micro-interactions.',
+    },
+    icon: 'Layout',
+    skills: [
+      {
+        id: 'react',
+        name: 'React',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'smartcv-semantic-ai'],
+      },
+      {
+        id: 'nextjs',
+        name: 'Next.js (App Router)',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['dejitalist-saas', 'smartcv-semantic-ai'],
+      },
+      {
+        id: 'typescript',
+        name: 'TypeScript',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['dejitalist-saas', 'smartcv-semantic-ai'],
+      },
+      {
+        id: 'tailwind',
+        name: 'Tailwind CSS',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'smartcv-semantic-ai'],
+      },
+      {
+        id: 'framer-motion',
+        name: 'Framer Motion',
+        level: 'Advanced',
+        projectSlugs: ['dejitalist-saas'],
+      },
+    ],
+  },
+  {
+    id: 'data-ai',
+    title: {
+      en: 'Data & Applied AI',
+      fr: 'Données & IA Appliquée',
+    },
+    description: {
+      en: 'Predictive modeling, data analytics pipelines, semantic search and decision support systems.',
+      fr: 'Modélisation prédictive, pipelines d\'analyse de données, recherche sémantique et systèmes d\'aide à la décision.',
+    },
+    icon: 'Brain',
+    skills: [
+      {
+        id: 'python',
+        name: 'Python (Pandas, NumPy)',
+        level: 'Advanced',
+        isHighlight: true,
+        projectSlugs: ['eleganza-idss-ml', 'smartcv-semantic-ai'],
+        certificateIds: ['cert-fastapi-ai'],
+      },
+      {
+        id: 'scikit-learn',
+        name: 'Scikit-learn / ML Modeling',
+        level: 'Advanced',
+        isHighlight: true,
+        projectSlugs: ['eleganza-idss-ml', 'smartcv-semantic-ai'],
+        certificateIds: ['cert-fastapi-ai'],
+      },
+      {
+        id: 'data-pipeline',
+        name: 'Data Pipeline Design (ETL)',
+        level: 'Advanced',
+        isHighlight: true,
+        projectSlugs: ['dash-analytics-hub', 'eleganza-idss-ml'],
+      },
+      {
+        id: 'bi-tools',
+        name: 'Data Visualization & BI',
+        level: 'Expert',
+        projectSlugs: ['dash-analytics-hub'],
+      },
+    ],
+  },
+  {
+    id: 'databases',
+    title: {
+      en: 'Databases & Storage',
+      fr: 'Bases de Données & Stockage',
+    },
+    description: {
+      en: 'Relational ACID schemas, serverless PostgreSQL, document stores and in-memory caches.',
+      fr: 'Schémas relationnels normalisés, PostgreSQL serverless, magasins NoSQL et caches mémoire.',
+    },
+    icon: 'Database',
+    skills: [
+      {
+        id: 'postgresql',
+        name: 'PostgreSQL / Neon',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'eleganza-idss-ml'],
+      },
+      {
+        id: 'mongodb',
+        name: 'MongoDB',
+        level: 'Advanced',
+        isHighlight: true,
+        projectSlugs: [],
+      },
+      {
+        id: 'prisma',
+        name: 'Prisma / Drizzle ORM',
+        level: 'Advanced',
+        projectSlugs: ['dejitalist-saas'],
+      },
+      {
+        id: 'redis',
+        name: 'Redis Cache',
+        level: 'Proficient',
+        projectSlugs: ['dejitalist-saas'],
+      },
+    ],
+  },
+  {
+    id: 'leadership',
+    title: {
+      en: 'Leadership & Governance',
+      fr: 'Leadership & Gouvernance',
+    },
+    description: {
+      en: 'Strategic decision making, team mentorship, budget governance and multicultural collaboration.',
+      fr: 'Vision stratégique, encadrement d\'équipes, gouvernance financière et négociation internationale.',
+    },
+    icon: 'Users',
+    skills: [
+      {
+        id: 'team-leadership',
+        name: 'Cross-functional Team Leadership',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: ['dash-analytics-hub'],
+        certificateIds: ['cert-aiesec-leadership'],
+      },
+      {
+        id: 'budgeting',
+        name: 'Budgeting & Financial Auditing',
+        level: 'Expert',
+        isHighlight: true,
+        projectSlugs: [],
+        certificateIds: ['cert-aiesec-leadership'],
+      },
+      {
+        id: 'agile',
+        name: 'Agile / Scrum Project Management',
+        level: 'Expert',
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+      },
+    ],
+  },
+];
