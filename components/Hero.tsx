@@ -153,7 +153,7 @@ export default function Hero() {
 
           {/* Right Column: Portrait Frame with Ambient Aura & Floating Badges (5 cols) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative group w-72 sm:w-80 md:w-96 aspect-square max-w-sm">
+            <div className="relative group w-72 sm:w-80 md:w-96 aspect-[4/5] max-w-sm">
               
               {/* Radial gradient frame backdrops */}
               <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-500 opacity-70 blur-xl group-hover:opacity-100 transition duration-500 group-hover:blur-2xl" />
@@ -169,7 +169,7 @@ export default function Hero() {
                       alt={`Portrait of ${profile.name}`}
                       fill
                       priority
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-[center_18%] group-hover:scale-105 transition-transform duration-500"
                       onError={() => setImageError(true)}
                     />
                   ) : (
