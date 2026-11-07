@@ -251,8 +251,8 @@ export default function Contact() {
                 {submitStatus === 'error' && (
                   <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs sm:text-sm font-medium">
                     {language === 'en'
-                      ? 'An error occurred. Please send a direct email to ranim.abidi@esprit.tn'
-                      : 'Une erreur s\'est produite. Veuillez envoyer un email direct à ranim.abidi@esprit.tn'}
+                      ? `An error occurred. Please send a direct email to ${profile.socials.email}`
+                      : `Une erreur s'est produite. Veuillez envoyer un email direct à ${profile.socials.email}`}
                   </div>
                 )}
 

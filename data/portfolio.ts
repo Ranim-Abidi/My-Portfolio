@@ -43,9 +43,9 @@ export const portfolioData: PortfolioData = {
     socials: {
       // Primary contact email address
       email: 'abidiranim237@gmail.com',
-      // TODO: Replace with your actual LinkedIn profile URL
-      linkedin: 'https://www.linkedin.com/in/ranim-abidi',
-      // GitHub profile URL
+      // Verified LinkedIn profile URL
+      linkedin: 'https://www.linkedin.com/in/ranim-abidi-a0aa46220/',
+      // Verified GitHub profile URL
       github: 'https://github.com/Ranim-Abidi',
       // TODO: Place your CV in /public/cv-ranim-abidi.pdf or set an external link
       cvUrl: '/cv-ranim-abidi.pdf',
