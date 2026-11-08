@@ -24,8 +24,8 @@ export const profileData: ProfileData = {
     fr: 'À la recherche d\'un stage de fin d\'études (PFE) · 2027',
   },
   shortBio: {
-    en: 'Dual-degree Cloud & DevOps engineering student at ESPRIT and Intelligent Web Master candidate at ISI KEF. Active youth leader driving high-impact international exchange at AIESEC Tunisia.',
-    fr: 'Élève-ingénieure en Cloud & DevOps à ESPRIT et en Master Professionnel Applications Web Intelligentes à l\'ISI KEF. Leader associative engagée chez AIESEC Tunisie.',
+    en: 'I’m an engineer who builds across the full lifecycle of modern systems. I design the cloud infrastructure, automate how it is delivered and operated, and develop the applications that run on top of it. I also bring intelligence and insight into those products through machine learning and data analytics, so that what I ship is not only reliable but genuinely useful to the people who depend on it.',
+    fr: 'Je conçois et développe des systèmes sur l\'ensemble de leur cycle de vie. Je conçois les infrastructures cloud, automatise leur déploiement et leur exploitation, et développe les applications qui y tournent. J\'y intègre également de l\'intelligence grâce au machine learning et à l\'analyse de données, garantissant des solutions non seulement fiables mais véritablement utiles.',
   },
   fullStory: {
     en: [
