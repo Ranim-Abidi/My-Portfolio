@@ -163,50 +163,80 @@ export const profileData: ProfileData = {
 
 export const educationData: EducationItem[] = [
   {
-    institution: 'ESPRIT - Ecole Supérieure Privée d\'Ingénierie et de Technologies',
+    institution: 'ESPRIT, École Supérieure Privée d’Ingénierie et de Technologies',
     degree: {
       en: 'National Engineering Degree in Cloud Computing & DevOps',
-      fr: 'Diplôme National d\'Ingénieur en Informatique - Spécialité Cloud Computing & DevOps',
+      fr: 'Diplôme National d\'Ingénieur en Informatique - Cloud Computing & DevOps',
     },
-    period: '2022 - 2027 (Expected July 2027)',
+    period: '2025 – 2027 (Expected July 2027)',
     location: 'Tunis, Tunisia',
     status: {
-      en: 'In progress · 4th / 5th Year',
-      fr: 'En cours · 4ème / 5ème année',
+      en: 'In progress',
+      fr: 'En cours',
     },
     badge: 'Engineering Degree',
     highlights: {
       en: [
-        'Advanced coursework: Cloud architectures, Distributed Systems, Container Orchestration (K8s), CI/CD Automation, Infrastructure as Code (Terraform), Network Security.',
-        'Active participant in academic cloud labs, microservice prototyping and technical hackathons.',
+        'Cloud architecture and distributed systems',
+        'Container orchestration (Kubernetes) and CI/CD automation',
+        'Infrastructure as Code (Terraform) and network security',
       ],
       fr: [
-        'Programme d\'excellence : Architectures Cloud, Systèmes Distribués, Orchestration de Conteneurs (K8s), Automatisation CI/CD, Infrastructure as Code (Terraform), Sécurité Réseau.',
-        'Participation active aux ateliers d\'architecture, prototypes de microservices et hackathons académiques.',
+        'Architectures cloud et systèmes distribués',
+        'Orchestration de conteneurs (Kubernetes) et automatisation CI/CD',
+        'Infrastructure as Code (Terraform) et sécurité réseau',
       ],
     },
   },
   {
-    institution: 'ISI KEF - Institut Supérieur d\'Informatique du Kef',
+    institution: 'ISI Kef, Institut Supérieur d’Informatique du Kef',
     degree: {
       en: 'Professional Master in Intelligent Web Applications',
       fr: 'Master Professionnel en Applications Web Intelligentes',
     },
-    period: '2024 - 2026',
+    period: '2024 – 2026',
     location: 'Le Kef, Tunisia',
     status: {
-      en: 'Concurrent Enrollment',
-      fr: 'Double cursus / Master Spécialisé',
+      en: 'Completed',
+      fr: 'Diplômée',
     },
-    badge: 'Master Degree',
+    badge: 'Master\'s Degree',
     highlights: {
       en: [
-        'Specialization in AI-powered web services, modern web frameworks, semantic data modelling and machine learning integration.',
-        'Focus on combining high-performance backend microservices with intelligent inference endpoints.',
+        'AI-powered web services and modern web frameworks',
+        'Semantic data modeling',
+        'Machine learning integration with backend services',
       ],
       fr: [
-        'Spécialisation dans les architectures web enrichies par l\'IA, frameworks réactifs modernes et intégration de modèles prédictifs.',
-        'Convergence entre microservices haute performance et points de terminaison d\'inférence décisionnels.',
+        'Services web alimentés par l\'IA et frameworks web modernes',
+        'Modélisation sémantique des données',
+        'Intégration du machine learning aux services backend',
+      ],
+    },
+  },
+  {
+    institution: 'ISI Kef, Institut Supérieur d’Informatique du Kef',
+    degree: {
+      en: 'Bachelor’s in Computer Science',
+      fr: 'Licence en Sciences de l\'Informatique',
+    },
+    period: '2021 – 2024',
+    location: 'Le Kef, Tunisia',
+    status: {
+      en: 'Completed',
+      fr: 'Diplômée',
+    },
+    badge: 'Bachelor\'s Degree',
+    highlights: {
+      en: [
+        'Programming, algorithms, and data structures',
+        'Software engineering and relational databases',
+        'Web development and computer networks',
+      ],
+      fr: [
+        'Programmation, algorithmes et structures de données',
+        'Génie logiciel et bases de données relationnelles',
+        'Développement web et réseaux informatiques',
       ],
     },
   },

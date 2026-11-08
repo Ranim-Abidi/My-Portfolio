@@ -112,21 +112,21 @@ export default function AboutPage() {
           </section>
         )}
 
-        {/* 2. Academic Foundations (ESPRIT & ISI KEF) */}
+        {/* 2. Academic Journey */}
         <section aria-labelledby="academic-heading" className="space-y-6">
           <div className="space-y-1">
-            <h2 id="academic-heading" className="text-2xl font-display font-bold text-[var(--text-primary)] flex items-center gap-2">
+            <h2 id="academic-heading" className="text-2xl sm:text-3xl font-display font-bold text-[var(--text-primary)] flex items-center gap-2">
               <GraduationCap className="w-6 h-6 text-cyan-400" />
-              <span>{language === 'en' ? 'Academic Foundations & Dual Degrees' : 'Formation Académique & Double Diplôme'}</span>
+              <span>{language === 'en' ? 'Academic Journey' : 'Parcours Académique'}</span>
             </h2>
             <p className="text-xs sm:text-sm text-[var(--text-muted)]">
               {language === 'en'
-                ? 'Concurrent engineering and specialized masters curriculum.'
-                : 'Double cursus d\'excellence en école d\'ingénieurs et master universitaire.'}
+                ? 'From computer science fundamentals to cloud engineering and intelligent applications.'
+                : 'Des fondamentaux de l\'informatique à l\'ingénierie cloud et aux applications intelligentes.'}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {education.map((item, idx) => (
               <div
                 key={idx}
@@ -142,33 +142,39 @@ export default function AboutPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-display font-bold text-[var(--text-primary)] mb-1">
+                  <h3 className="text-lg font-display font-bold text-[var(--text-primary)] mb-1.5 leading-snug">
                     {t(item.degree)}
                   </h3>
 
-                  <p className="text-sm font-medium text-cyan-500 dark:text-cyan-400 mb-4">
+                  <p className="text-sm font-medium text-cyan-500 dark:text-cyan-400 mb-3">
                     {item.institution}
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[var(--text-muted)] mb-4">
+                  <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[var(--text-muted)] mb-5">
                     <span className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5" />
+                      <Calendar className="w-3.5 h-3.5 text-cyan-400" />
                       {item.period}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5" />
+                      <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                       {item.location}
                     </span>
                   </div>
 
-                  <ul className="space-y-2">
-                    {t(item.highlights).map((highlight, hIdx) => (
-                      <li key={hIdx} className="flex items-start gap-2 text-xs sm:text-sm text-[var(--text-secondary)]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Core Focus Section */}
+                  <div className="pt-2 border-t border-[var(--border-color)]/60">
+                    <span className="block text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 mb-2.5">
+                      {language === 'en' ? 'Core Focus' : 'Axes Principaux'}
+                    </span>
+                    <ul className="space-y-2">
+                      {t(item.highlights).map((highlight, hIdx) => (
+                        <li key={hIdx} className="flex items-start gap-2 text-xs sm:text-sm text-[var(--text-secondary)]">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             ))}
