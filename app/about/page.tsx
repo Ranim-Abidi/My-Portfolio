@@ -65,24 +65,26 @@ export default function AboutPage() {
         </div>
 
         {/* The Narrative */}
-        <section aria-labelledby="story-heading" className="space-y-5 text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">
-          <h2 id="story-heading" className="text-2xl font-display font-bold text-[var(--text-primary)]">
-            {language === 'en' ? 'My Background & Engineering Vision' : 'Mon Histoire & Ma Vision'}
+        <section aria-labelledby="story-heading" className="space-y-6 text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">
+          <h2 id="story-heading" className="text-2xl sm:text-3xl font-display font-bold text-[var(--text-primary)]">
+            {language === 'en' ? 'My Engineering Vision' : 'Ma Vision d\'Ingénierie'}
           </h2>
-          {t(profile.fullStory).map((p, idx) => (
-            <p key={idx} className="text-justify sm:text-left">
-              {p}
-            </p>
-          ))}
+          <div className="space-y-5">
+            {t(profile.fullStory).map((p, idx) => (
+              <p key={idx} className="text-justify sm:text-left leading-relaxed">
+                {p}
+              </p>
+            ))}
+          </div>
 
-          {/* Motto Callout Banner */}
-          <div className="p-6 rounded-2xl bg-gradient-to-r from-cyan-500/10 via-indigo-500/10 to-violet-500/10 border border-cyan-500/30 flex items-start gap-3 mt-8">
-            <Sparkles className="w-6 h-6 text-cyan-400 shrink-0 mt-0.5" />
+          {/* Motto Callout Banner (Signature Card) */}
+          <div className="p-6 rounded-2xl bg-gradient-to-r from-cyan-500/10 via-indigo-500/10 to-violet-500/10 border border-cyan-500/30 flex items-start gap-4 mt-12 sm:mt-16 shadow-lg shadow-cyan-500/5">
+            <Sparkles className="w-6 h-6 text-cyan-400 shrink-0 mt-1" />
             <div>
               <p className="font-display font-bold text-lg sm:text-xl text-[var(--text-primary)]">
                 &ldquo;{t(profile.motto)}&rdquo;
               </p>
-              <p className="text-xs font-mono text-[var(--text-muted)] mt-1">
+              <p className="text-xs font-mono text-[var(--text-muted)] mt-1.5">
                 {language === 'en' ? 'Guiding personal & engineering principle' : 'Principe directeur d\'ingénierie'}
               </p>
             </div>

@@ -29,14 +29,14 @@ export const profileData: ProfileData = {
   },
   fullStory: {
     en: [
-      'I operate at the intersection of Cloud Architecture, Modern Web Engineering, and Data Intelligence. Currently pursuing an Engineering degree in Cloud Computing & DevOps at ESPRIT (class of 2027) while simultaneously deepening my expertise with a Professional Master in Intelligent Web Applications at ISI KEF.',
-      'Beyond technical implementations, I bring proven leadership as Vice President of Volunteering Exchange (and previously VP Finance & Legal) at AIESEC Tunisia, orchestrating cross-border talent pipelines, governance, and organizational strategy.',
-      'Whether automating Kubernetes microservices with GitOps, provisioning resilient Terraform multi-cloud architectures, or fine-tuning ML pipelines for real-time decision support, I build systems engineered for longevity, observability, and genuine user value.',
+      'I believe great engineering is judged by what happens after the code is written. A system has to deploy the same way every time, be understood while it runs, and keep working when conditions change. That is why I treat infrastructure as code, automation as a default, and observability as part of the design from day one.',
+      'I also see the cloud as the foundation for intelligent products, not just a place to host them. When machine learning and data are built into a system and operated with the same discipline as the rest of the stack, they become reliable decision-making tools instead of experiments that never leave a notebook.',
+      'Whatever I build, I measure it by one question: does it solve a real problem for the people who depend on it? Technology matters only when it makes their work simpler, faster, or more dependable.',
     ],
     fr: [
-      'J\'évolue à la convergence de l\'architecture Cloud, du génie logiciel moderne et de l\'intelligence des données. Je poursuis actuellement mon diplôme d\'ingénieure en Cloud Computing & DevOps à ESPRIT (promotion 2027), tout en consolidant mes compétences via un Master Professionnel en Applications Web Intelligentes à l\'ISI KEF.',
-      'Au-delà du code, j\'exerce un leadership prouvé en tant que Vice-Présidente Volunteering Exchange (et précédemment VP Finance & Juridique) chez AIESEC Tunisie, pilotant des flux d\'échanges internationaux, la conformité légale et la stratégie de croissance.',
-      'Qu\'il s\'agisse d\'automatiser des microservices Kubernetes en GitOps, d\'orchestrer des infrastructures résilientes avec Terraform, ou d\'intégrer des modèles d\'IA dans des plateformes SaaS, je conçois des systèmes axés sur la robustesse, la performance et l\'impact réel.',
+      'Je suis convaincue que l\'excellence en ingénierie se mesure à ce qui se passe après l\'écriture du code. Un système doit se déployer de manière reproductible, être intelligible en cours d\'exécution et rester opérationnel lorsque les conditions changent. C\'est pourquoi je considère l\'infrastructure comme du code, l\'automatisation comme un réflexe par défaut et l\'observabilité comme un élément central dès la conception.',
+      'Je conçois également le cloud comme le socle des produits intelligents, et non comme un simple hébergement. Lorsque le machine learning et les flux de données sont intégrés avec la même rigueur que le reste de la stack, ils deviennent des outils d\'aide à la décision fiables plutôt que des expérimentations cantonnées à un notebook.',
+      'Qu\'importe ce que je construis, je l\'évalue selon une question essentielle : résout-il un problème concret pour les personnes qui en dépendent ? La technologie n\'a de valeur que lorsqu\'elle rend le travail plus simple, plus rapide ou plus fiable.',
     ],
   },
   languages: [
