@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { portfolioData } from '@/data/portfolio';
 import HowIBuild from '@/components/about/HowIBuild';
-import AskMeAbout from '@/components/about/AskMeAbout';
 import BeyondTheCode from '@/components/about/BeyondTheCode';
 import {
   GraduationCap,
@@ -176,10 +175,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 3. Ask Me About (Interactive Topic Explorer) */}
-        <AskMeAbout />
-
-        {/* 4. Beyond the Code (Playful Human Dimensions) */}
+        {/* 3. Beyond the Code (Playful Human Dimensions) */}
         <BeyondTheCode />
 
         {/* Languages & Values */}
