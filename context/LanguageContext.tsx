@@ -39,7 +39,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = <T,>(obj: Localized<T> | undefined): T => {
     if (!obj) return '' as unknown as T;
-    return obj[language] ?? obj.en;
+    const val = obj[language];
+    if (typeof val === 'string' && val.trim() === '') {
+      return obj.en;
+    }
+    return val ?? obj.en;
   };
 
   return (

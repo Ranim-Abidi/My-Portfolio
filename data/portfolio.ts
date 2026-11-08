@@ -6,6 +6,7 @@ import { experienceData } from './experience';
 import { leadershipData } from './leadership';
 import { achievementsData } from './achievements';
 import { externalLinksData } from './links';
+import { howIBuildData, askMeAboutData, beyondTheCodeData } from './about';
 
 export const portfolioData: PortfolioData = {
   profile: profileData,
@@ -17,6 +18,9 @@ export const portfolioData: PortfolioData = {
   leadership: leadershipData,
   certificates: achievementsData,
   externalLinks: externalLinksData,
+  howIBuild: howIBuildData,
+  askMeAbout: askMeAboutData,
+  beyondTheCode: beyondTheCodeData,
 };
 
 // Re-export modular sources
@@ -30,4 +34,7 @@ export {
   leadershipData,
   achievementsData,
   externalLinksData,
+  howIBuildData,
+  askMeAboutData,
+  beyondTheCodeData,
 };

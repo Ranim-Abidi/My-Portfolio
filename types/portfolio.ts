@@ -170,6 +170,54 @@ export interface ExternalLinkItem {
   primary?: boolean;
 }
 
+export interface BuildPipelineStep {
+  id: string;
+  stepNumber: string;
+  title: Localized<string>;
+  description: Localized<string>;
+}
+
+export interface HowIBuildData {
+  title: Localized<string>;
+  subtitle: Localized<string>;
+  steps: BuildPipelineStep[];
+  loopStep: {
+    badge: string;
+    title: Localized<string>;
+    description: Localized<string>;
+  };
+}
+
+export interface AskMeTopic {
+  id: string;
+  topic: Localized<string>;
+  answer: Localized<string>;
+  projectLink?: {
+    label: Localized<string>;
+    href: string;
+  };
+}
+
+export interface AskMeAboutData {
+  title: Localized<string>;
+  subtitle: Localized<string>;
+  topics: AskMeTopic[];
+}
+
+export interface BeyondTheCodeItem {
+  id: string;
+  title: Localized<string>;
+  description: Localized<string>;
+  icon: 'guitar' | 'book' | 'roots';
+  tag: Localized<string>;
+}
+
+export interface BeyondTheCodeData {
+  title: Localized<string>;
+  subtitle: Localized<string>;
+  items: BeyondTheCodeItem[];
+}
+
 export interface ProfileData {
   name: string;
   phoneticName: string;
@@ -199,4 +247,7 @@ export interface PortfolioData {
   leadership: LeadershipRole[];
   certificates: CertificateItem[];
   externalLinks: ExternalLinkItem[];
+  howIBuild: HowIBuildData;
+  askMeAbout: AskMeAboutData;
+  beyondTheCode: BeyondTheCodeData;
 }

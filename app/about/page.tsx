@@ -4,15 +4,15 @@ import React from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { portfolioData } from '@/data/portfolio';
+import HowIBuild from '@/components/about/HowIBuild';
+import AskMeAbout from '@/components/about/AskMeAbout';
+import BeyondTheCode from '@/components/about/BeyondTheCode';
 import {
   GraduationCap,
   Sparkles,
   Calendar,
   MapPin,
   CheckCircle2,
-  BookOpen,
-  Hammer,
-  Brain,
   Globe,
   Compass,
   ArrowRight,
@@ -91,6 +91,9 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* 1. How I Build (Pipeline & Loop) */}
+        <HowIBuild />
+
         {/* Video Introduction / Walkthrough if available */}
         {introEmbedUrl && (
           <section aria-labelledby="intro-video-heading" className="space-y-3">
@@ -110,75 +113,7 @@ export default function AboutPage() {
           </section>
         )}
 
-        {/* "Now" Block (What I am building & learning this month) */}
-        <section aria-labelledby="now-heading" className="p-6 sm:p-8 rounded-3xl bg-[var(--card-bg)] border border-[var(--border-color)] space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[var(--border-color)] pb-4">
-            <div>
-              <h2 id="now-heading" className="text-xl font-display font-bold text-[var(--text-primary)] flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>{language === 'en' ? 'Now / Current Focus' : 'En ce Moment'}</span>
-              </h2>
-              <p className="text-xs text-[var(--text-muted)]">
-                {language === 'en' ? 'What I am building, learning, and reading this month' : 'Projets, apprentissages et lectures du moment'}
-              </p>
-            </div>
-            <span className="text-[11px] font-mono text-cyan-400">
-              Updated: {profile.now.updatedAt}
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Learning */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">
-                <Brain className="w-4 h-4" />
-                <span>{language === 'en' ? 'Deepening' : 'Apprentissage'}</span>
-              </div>
-              <ul className="space-y-2">
-                {t(profile.now.learning).map((item, idx) => (
-                  <li key={idx} className="text-xs sm:text-sm text-[var(--text-secondary)] flex items-start gap-2">
-                    <span className="text-cyan-400 shrink-0 mt-0.5">&bull;</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Building */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-indigo-400 uppercase tracking-wider">
-                <Hammer className="w-4 h-4" />
-                <span>{language === 'en' ? 'Building' : 'Conception'}</span>
-              </div>
-              <ul className="space-y-2">
-                {t(profile.now.building).map((item, idx) => (
-                  <li key={idx} className="text-xs sm:text-sm text-[var(--text-secondary)] flex items-start gap-2">
-                    <span className="text-indigo-400 shrink-0 mt-0.5">&bull;</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Reading */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-violet-400 uppercase tracking-wider">
-                <BookOpen className="w-4 h-4" />
-                <span>{language === 'en' ? 'Reading' : 'Lectures'}</span>
-              </div>
-              <ul className="space-y-2">
-                {t(profile.now.reading).map((item, idx) => (
-                  <li key={idx} className="text-xs sm:text-sm text-[var(--text-secondary)] flex items-start gap-2">
-                    <span className="text-violet-400 shrink-0 mt-0.5">&bull;</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Academic Foundations (ESPRIT & ISI KEF) */}
+        {/* 2. Academic Foundations (ESPRIT & ISI KEF) */}
         <section aria-labelledby="academic-heading" className="space-y-6">
           <div className="space-y-1">
             <h2 id="academic-heading" className="text-2xl font-display font-bold text-[var(--text-primary)] flex items-center gap-2">
@@ -240,6 +175,12 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
+
+        {/* 3. Ask Me About (Interactive Topic Explorer) */}
+        <AskMeAbout />
+
+        {/* 4. Beyond the Code (Playful Human Dimensions) */}
+        <BeyondTheCode />
 
         {/* Languages & Values */}
         <section aria-labelledby="languages-values-heading" className="grid grid-cols-1 md:grid-cols-2 gap-8">
