@@ -41,16 +41,20 @@ export const profileData: ProfileData = {
   },
   languages: [
     {
+      name: { en: 'Arabic', fr: 'Arabe' },
+      proficiency: { en: 'Native', fr: 'Langue maternelle' },
+    },
+    {
       name: { en: 'English', fr: 'Anglais' },
-      proficiency: { en: 'Full Professional Proficiency', fr: 'Compétence professionnelle complète' },
+      proficiency: { en: 'C1, Professional working proficiency', fr: 'C1, Compétence professionnelle' },
     },
     {
       name: { en: 'French', fr: 'Français' },
-      proficiency: { en: 'Bilingual / Native Fluency', fr: 'Bilingue / Langue maternelle' },
+      proficiency: { en: 'B2, Upper intermediate', fr: 'B2, Intermédiaire supérieur' },
     },
     {
-      name: { en: 'Arabic', fr: 'Arabe' },
-      proficiency: { en: 'Native Speaker', fr: 'Langue maternelle' },
+      name: { en: 'Italian', fr: 'Italien' },
+      proficiency: { en: 'A2, Elementary', fr: 'A2, Élémentaire' },
     },
   ],
   socials: {
@@ -137,24 +141,24 @@ export const profileData: ProfileData = {
     {
       title: { en: 'Engineering Rigor', fr: 'Rigueur d\'Ingénierie' },
       description: {
-        en: 'Zero tolerance for manual, unrepeatable steps. Everything declared in code, automated through CI/CD, and covered by automated tests.',
-        fr: 'Aucune étape manuelle non reproductible. Tout est déclaré dans le code, automatisé par CI/CD et validé par des tests.',
+        en: 'If it’s not in code, it doesn’t exist. Infrastructure is declared, deployments are automated through CI/CD, and nothing ships by hand.',
+        fr: 'Si ce n\'est pas dans le code, cela n\'existe pas. L\'infrastructure est déclarée, les déploiements sont automatisés via CI/CD, et rien n\'est déployé manuellement.',
       },
       icon: 'ShieldCheck',
     },
     {
       title: { en: 'Empathy in Leadership', fr: 'Leadership Empathique' },
       description: {
-        en: 'Empowering cross-functional teams to own their missions with psychological safety, clear metrics, and mentorship.',
-        fr: 'Permettre aux équipes pluridisciplinaires d\'accomplir leurs missions avec confiance, indicateurs clairs et mentorat.',
+        en: 'I lead by giving teams clear goals and room to own their missions. As a GDSC Lead & mentor, I’ve helped train 2,000+ students.',
+        fr: 'Je guide les équipes en fixant des objectifs clairs tout en leur laissant l\'autonomie sur leurs missions. En tant que Lead GDSC et mentore, j\'ai contribué à former plus de 2 000 étudiants.',
       },
       icon: 'Users',
     },
     {
-      title: { en: 'Obsession with Value', fr: 'Orientation Impact' },
+      title: { en: 'Obsession with Value', fr: 'Obsession de la Valeur' },
       description: {
-        en: 'Technology is only as valuable as the real-world operational problem it resolves for users and organizations.',
-        fr: 'La technologie ne vaut que par la valeur opérationnelle réelle qu\'elle apporte aux utilisateurs et organisations.',
+        en: 'Technology only matters if it solves a real problem. I build by starting with the people who face it, and I measure the result by what it changes for them.',
+        fr: 'La technologie ne compte que si elle résout un problème concret. Je conçois en partant de ceux qui y font face, et je mesure le résultat à l\'impact réel apporté.',
       },
       icon: 'Target',
     },
