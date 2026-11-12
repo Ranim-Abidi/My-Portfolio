@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
 import { portfolioData } from '@/data/portfolio';
 import { ProjectCategory, ProjectItem, ProjectStatus } from '@/types/portfolio';
@@ -25,12 +26,21 @@ import {
 } from 'lucide-react';
 import { Github } from '@/components/Icons';
 
-export default function ProjectsPage() {
+function ProjectsContent() {
   const { language, t } = useLanguage();
   const { projects } = portfolioData;
+  const searchParams = useSearchParams();
+  const urlSearch = searchParams.get('search') || '';
 
   const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(urlSearch);
+
+  useEffect(() => {
+    if (urlSearch) {
+      setSearchQuery(urlSearch);
+    }
+  }, [urlSearch]);
+
   const [videoModal, setVideoModal] = useState<{ isOpen: boolean; url?: string; title: string }>({
     isOpen: false,
     url: '',
@@ -573,5 +583,13 @@ export default function ProjectsPage() {
         onClose={() => setVideoModal({ isOpen: false, url: '', title: '' })}
       />
     </div>
+  );
+}
+
+export default function ProjectsPage() {
+  return (
+    <Suspense fallback={<div className="py-28 text-center text-xs font-mono text-cyan-400">Loading Projects Hub...</div>}>
+      <ProjectsContent />
+    </Suspense>
   );
 }

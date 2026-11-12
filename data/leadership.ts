@@ -2,85 +2,249 @@ import { LeadershipRole } from '@/types/portfolio';
 
 export const leadershipData: LeadershipRole[] = [
   {
-    id: 'aiesec-vp-vxp',
-    title: {
-      en: 'Vice President of Volunteering Exchange (VXP)',
-      fr: 'Vice-Présidente Volunteering Exchange (VXP)',
+    id: 'aiesec-jendouba-vp-ogv',
+    role: {
+      en: 'Founder & Local Committee VP, Outgoing Global Volunteer',
+      fr: 'Fondatrice & Vice-Présidente Comité Local, Outgoing Global Volunteer',
     },
-    organization: 'AIESEC in Tunisia (National Operations)',
-    period: 'Feb 2026 - Present',
+    title: {
+      en: 'Founder & Local Committee VP, Outgoing Global Volunteer',
+      fr: 'Fondatrice & Vice-Présidente Comité Local, Outgoing Global Volunteer',
+    },
+    organization: 'AIESEC Jendouba / AIESEC in Tunisia',
+    scope: 'National',
+    category: 'entrepreneurship',
+    start: 'Feb 2026',
+    end: 'Present',
+    period: 'Feb 2026 – Present',
     status: 'Current',
-    scope: {
-      en: 'Directing the national volunteering exchange entity: orchestrating youth talent pipelines, managing international bilateral partnerships with 15+ AIESEC member countries, and driving entity growth.',
-      fr: 'Direction du pôle national des échanges de volontariat : pilotage des flux de talents, gestion des partenariats bilatéraux avec plus de 15 pays et conduite de la stratégie d\'expansion.',
+    summary: {
+      en: 'Co-founded the AIESEC Jendouba local committee and lead the outgoing global volunteer exchange portfolio within AIESEC in Tunisia’s national structure.',
+      fr: 'Co-fondatrice du comité local AIESEC Jendouba et directrice du pôle des échanges de volontariat international au sein de la structure nationale.',
     },
-    teamSize: '25+ Cross-functional Leaders across 10 Local Committees',
-    budgetManaged: '100% Operational Target Compliance',
-    impactMetrics: {
+    highlights: {
       en: [
-        '+42% Year-over-year increase in approved international volunteering exchanges',
-        'Standardized national applicant review SLAs down to under 48 hours',
-        'Launched real-time pipeline visibility dashboards connecting local committees to the national executive board',
+        'Co-founded the AIESEC Jendouba local committee and lead the outgoing global volunteer exchange portfolio.',
+        'Works within AIESEC in Tunisia’s national structure to drive cross-border exchange opportunities.',
       ],
       fr: [
-        '+42% de progression annuelle sur les missions de volontariat international approuvées',
-        'Réduction des délais d\'examen des candidatures à moins de 48 heures',
-        'Déploiement de tableaux de bord unifiés reliant les comités locaux à la direction nationale',
+        'Co-fondatrice du comité local AIESEC Jendouba et direction du pôle d’échanges de volontariat international.',
+        'Pilotage au sein de la structure nationale d’AIESEC en Tunisie pour développer les opportunités d’échanges.',
       ],
     },
-    responsibilities: {
-      en: [
-        'Setting national strategic operational goals and tracking execution across weekly agile sprint cycles.',
-        'Negotiating bilateral cooperation agreements with foreign AIESEC entities across Europe, Latin America, and MENA.',
-        'Mentoring local committee vice presidents, conducting leadership academies, and enforcing risk management protocols.',
-      ],
-      fr: [
-        'Définition des objectifs opérationnels nationaux et suivi d\'exécution en cycles agiles hebdomadaires.',
-        'Négociation d\'accords de coopération bilatérale avec des entités AIESEC en Europe, Amérique Latine et MENA.',
-        'Formation et encadrement des vice-présidents locaux, animation d\'académies de leadership et gestion des risques.',
-      ],
+    link: {
+      label: { en: 'View DevOps Role on DASH', fr: 'Voir le rôle DevOps sur DASH' },
+      href: '/experience#aiesec-tunisia-dash-devops',
+      type: 'experience',
     },
-    photos: ['/leadership/vxp-team.webp'],
   },
+
   {
-    id: 'aiesec-vp-fl',
+    id: 'aiesec-jendouba-vp-fl',
+    role: {
+      en: 'Founder & Local Committee VP, Finance & Legals',
+      fr: 'Fondatrice & Vice-Présidente Comité Local, Finance & Affaires Juridiques',
+    },
     title: {
-      en: 'Vice President of Finance & Legal Affairs (FL)',
-      fr: 'Vice-Présidente Finance & Affaires Juridiques (FL)',
+      en: 'Founder & Local Committee VP, Finance & Legals',
+      fr: 'Fondatrice & Vice-Présidente Comité Local, Finance & Affaires Juridiques',
     },
-    organization: 'AIESEC in Tunisia (Local Committee)',
-    period: 'Feb 2025 - Jan 2026',
+    organization: 'AIESEC Jendouba / AIESEC in Tunisia',
+    scope: 'National',
+    category: 'entrepreneurship',
+    start: 'Apr 2025',
+    end: 'Feb 2026',
+    period: 'Apr 2025 – Feb 2026',
     status: 'Completed',
-    scope: {
-      en: 'Sole custodian of local entity treasury, budget governance, legal compliance, contract auditing, and statutory risk assessment.',
-      fr: 'Gestionnaire unique de la trésorerie locale, de la gouvernance budgétaire, de la conformité juridique et des audits statutaires.',
+    summary: {
+      en: 'Founding member of the local committee, responsible for the finance and legal governance portfolio.',
+      fr: 'Membre fondatrice du comité local, responsable du pôle financier, juridique et de la gouvernance statutaire.',
     },
-    teamSize: 'Executive Board Member overseeing entity fiscal health',
-    budgetManaged: '100% National Audit Clearance (Zero Discrepancies)',
-    impactMetrics: {
+    highlights: {
       en: [
-        'Achieved 100% score on National Financial Audit with zero non-conformances',
-        'Instituted automated bookkeeping models that eliminated manual receipt accounting delays',
-        'Optimized conference and project resource allocation, increasing year-end reserves by 28%',
+        'Founding member of the local committee, responsible for the finance and legal portfolio.',
+        'Structured the fiscal foundation and statutory compliance framework for the newly established entity.',
       ],
       fr: [
-        'Obtention d\'un score de 100% à l\'audit financier national sans aucune non-conformité',
-        'Mise en place d\'outils d\'automatisation comptable éliminant les retards de rapprochement',
-        'Optimisation des dépenses d\'événements permettant d\'augmenter les réserves financières de 28%',
+        'Membre fondatrice du comité local, en charge des finances et de la gouvernance juridique.',
+        'Mise en place de la structure budgétaire et de la conformité statutaire pour la nouvelle entité.',
       ],
     },
-    responsibilities: {
+    link: {
+      label: { en: 'Explore OXIT Founder Project', fr: 'Découvrir le projet OXIT' },
+      href: '/projects/oxit-smart-agriculture',
+      type: 'project',
+    },
+  },
+
+  {
+    id: 'wtm-ambassador',
+    role: {
+      en: 'Ambassador, MENA Region & Applicant Reviewer',
+      fr: 'Ambassadrice Région MENA & Évaluatrice de Candidatures',
+    },
+    title: {
+      en: 'Ambassador, MENA Region & Applicant Reviewer',
+      fr: 'Ambassadrice Région MENA & Évaluatrice de Candidatures',
+    },
+    organization: 'Women Techmakers (Google)',
+    scope: 'Regional',
+    category: 'communities',
+    start: 'Aug 2024',
+    end: 'Present',
+    period: 'Aug 2024 – Present',
+    status: 'Current',
+    summary: {
+      en: 'Represent the Women Techmakers community across the MENA region and review incoming program applicants.',
+      fr: 'Représente la communauté Women Techmakers dans la région MENA et évalue les candidatures au programme.',
+    },
+    highlights: {
       en: [
-        'Drafting, defending, and enforcing the annual operational budget before the General Assembly.',
-        'Reviewing international participant contracts, insurance validations, and host entity agreements.',
-        'Training incoming executive board candidates in financial literacy, fiscal transparency, and ethical governance.',
+        'Represent the Women Techmakers community in the MENA region and review program applicants.',
+        'Promote technical visibility, inclusion, and resources for women engineers in the regional ecosystem.',
       ],
       fr: [
-        'Élaboration, présentation et exécution du budget annuel devant l\'Assemblée Générale.',
-        'Revue juridique des contrats d\'échanges internationaux, assurances et accords de partenariat.',
-        'Transmission et formation des successeurs à la transparence financière et à la déontologie associative.',
+        'Représentation de la communauté Women Techmakers dans la région MENA et sélection des candidates.',
+        'Promotion de la visibilité technique, de l’inclusion et des ressources pour les ingénieures de la région.',
       ],
     },
-    photos: ['/leadership/fl-audit.webp'],
+  },
+
+  {
+    id: 'gdsc-isi-kef-progression',
+    role: {
+      en: 'GDSC Leadership Progression (Member → Comm Lead → Lead → Mentor)',
+      fr: 'Parcours GDSC (Membre → Lead Com → Lead → Mentore)',
+    },
+    title: {
+      en: 'GDSC ISI Kef: 3-Year Leadership Progression',
+      fr: 'GDSC ISI Kef : Parcours de Leadership sur 3 Ans',
+    },
+    organization: 'Google Developer Student Clubs (GDSC) ISI Kef',
+    scope: 'Local',
+    category: 'mentoring',
+    start: 'Oct 2021',
+    end: 'Oct 2024',
+    period: 'Oct 2021 – Oct 2024 (3 Years)',
+    status: 'Completed',
+    summary: {
+      en: 'Progressed from active club member to Marketing Lead, elected Chapter Lead, and served as technical mentor training 1,000+ students in IT.',
+      fr: 'Évolution de membre active à Lead Communication, puis Chapter Lead élue et mentore technique formant plus de 1 000 étudiants en informatique.',
+    },
+    highlights: {
+      en: [
+        'Trained 1,000+ students in IT, modern web development, and cloud fundamentals.',
+        'Led chapter operations, speaker engagements, and collaborative engineering hackathons as GDSC Lead.',
+        'Mentored junior students and facilitated technical workshops across campus.',
+      ],
+      fr: [
+        'Formation de plus de 1 000 étudiants en informatique, développement web moderne et cloud.',
+        'Direction des opérations du club, conférences techniques et hackathons en tant que Lead GDSC.',
+        'Mentorat d’étudiants juniors et animation d’ateliers pratiques sur le campus.',
+      ],
+    },
+    progressionSteps: [
+      {
+        role: { en: 'Mentor', fr: 'Mentore' },
+        period: 'Sep 2023 – Oct 2024',
+        summary: {
+          en: 'Trained 1,000+ students in IT, organized technical workshops and supported project teams.',
+          fr: 'Formation de plus de 1 000 étudiants en informatique, ateliers techniques et encadrement.',
+        },
+      },
+      {
+        role: { en: 'Lead', fr: 'Lead' },
+        period: 'Jul 2022 – Sep 2023',
+        summary: {
+          en: 'Directed the club chapter, coordinated events, and built academic-industry partnerships.',
+          fr: 'Direction générale du club, coordination des événements et partenariats académiques.',
+        },
+      },
+      {
+        role: { en: 'Marketing & Communication Lead', fr: 'Lead Marketing & Communication' },
+        period: 'Mar 2022 – Jul 2022',
+        summary: {
+          en: 'Managed community branding, event promotion, and digital media channels.',
+          fr: 'Gestion de la communication, promotion des événements et canaux numériques du club.',
+        },
+      },
+      {
+        role: { en: 'Member', fr: 'Membre' },
+        period: 'Oct 2021 – Mar 2022',
+        summary: {
+          en: 'Participated in technical workshops, peer coding sessions, and community hackathons.',
+          fr: 'Participation aux ateliers techniques, sessions de code et hackathons communautaires.',
+        },
+      },
+    ],
+    link: {
+      label: { en: 'View Verified Achievements', fr: 'Voir les prix & réalisations' },
+      href: '/achievements',
+      type: 'achievement',
+    },
+  },
+
+  {
+    id: 'jci-member',
+    role: {
+      en: 'Member',
+      fr: 'Membre',
+    },
+    title: {
+      en: 'Member, Junior Chamber International',
+      fr: 'Membre, Jeune Chambre Internationale',
+    },
+    organization: 'JCI (Junior Chamber International)',
+    scope: 'International',
+    category: 'entrepreneurship',
+    start: 'Jan 2022',
+    end: 'Apr 2026',
+    period: 'Jan 2022 – Apr 2026',
+    status: 'Completed',
+    summary: {
+      en: 'Engaged in community development, civic leadership initiatives, and youth entrepreneurship projects.',
+      fr: 'Engagement citoyen, développement communautaire et initiatives pour l’entrepreneuriat des jeunes.',
+    },
+    highlights: {
+      en: [
+        'Contributed to youth leadership initiatives and local community development projects.',
+        'Collaborated on civic engagement and entrepreneurial training programs.',
+      ],
+      fr: [
+        'Contribution aux initiatives de leadership pour les jeunes et projets de développement local.',
+        'Participation aux programmes d’engagement citoyen et de formation entrepreneuriale.',
+      ],
+    },
+  },
+
+  {
+    id: 'microsoft-tech-club',
+    role: {
+      en: 'Assistant Marketing Manager',
+      fr: 'Responsable Marketing Adjointe',
+    },
+    title: {
+      en: 'Assistant Marketing Manager, Microsoft Tech Club',
+      fr: 'Responsable Marketing Adjointe, Microsoft Tech Club',
+    },
+    organization: 'Microsoft Tech Club',
+    scope: 'Local',
+    category: 'communities',
+    start: 'Nov 2021',
+    end: 'Jan 2022',
+    period: 'Nov 2021 – Jan 2022',
+    status: 'Completed',
+    summary: {
+      en: 'Supported technical event marketing, visual announcements, and student participation outreach.',
+      fr: 'Soutien à la communication événementielle technique, visuels d’annonces et mobilisation étudiante.',
+    },
+    highlights: {
+      en: [
+        'Assisted in marketing student technology sessions and campus developer workshops.',
+      ],
+      fr: [
+        'Promotion des sessions technologiques étudiantes et des ateliers de développement.',
+      ],
+    },
   },
 ];

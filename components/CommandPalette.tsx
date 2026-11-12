@@ -20,6 +20,8 @@ import {
   Globe,
   Terminal,
   FileText,
+  Briefcase,
+  Users,
 } from 'lucide-react';
 
 export default function CommandPalette() {
@@ -157,11 +159,31 @@ export default function CommandPalette() {
         id: `skill-${s.id}`,
         type: 'skill' as const,
         title: s.name,
-        subtitle: `${s.level} · ${t(cat.title)}`,
+        subtitle: `${t(cat.title)} · Filter Projects Hub`,
         icon: <Cpu className="w-4 h-4 text-cyan-400" />,
-        action: () => router.push(`/skills?focus=${s.id}`),
+        action: () => router.push(`/projects?search=${encodeURIComponent(s.name)}`),
       }))
     ),
+
+    // Experience Roles
+    ...portfolioData.experience.map((e) => ({
+      id: `exp-${e.id}`,
+      type: 'page' as const,
+      title: `${t(e.role)} — ${e.organization}`,
+      subtitle: `${e.period} · /experience`,
+      icon: <Briefcase className="w-4 h-4 text-emerald-400" />,
+      action: () => router.push(`/experience#${e.id}`),
+    })),
+
+    // Leadership Roles
+    ...portfolioData.leadership.map((l) => ({
+      id: `ldr-${l.id}`,
+      type: 'page' as const,
+      title: `${t(l.title)} — ${l.organization}`,
+      subtitle: `${l.period} · /leadership`,
+      icon: <Users className="w-4 h-4 text-purple-400" />,
+      action: () => router.push(`/leadership#${l.id}`),
+    })),
 
     // Actions
     {

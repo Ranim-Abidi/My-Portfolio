@@ -1,261 +1,200 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useMemo, Suspense } from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
 import { portfolioData } from '@/data/portfolio';
-import { SkillItem } from '@/types/portfolio';
+import { coreFocusSkills, spokenLanguagesData } from '@/data/skills';
+import { SkillCategory, SkillItem } from '@/types/portfolio';
 import {
   Cpu,
   Cloud,
   Server,
+  Layers,
+  Activity,
+  Shield,
   Layout,
-  Brain,
   Database,
-  Users,
-  CheckCircle,
+  Brain,
+  Sparkles,
+  Settings,
   FolderGit2,
   Award,
-  ArrowRight,
   ExternalLink,
-  Layers,
-  Sparkles,
+  ArrowRight,
+  Globe,
+  CheckCircle2,
+  Info,
 } from 'lucide-react';
 
-const iconMap: Record<string, React.ReactNode> = {
-  Cloud: <Cloud className="w-5 h-5" />,
-  Server: <Server className="w-5 h-5" />,
-  Layout: <Layout className="w-5 h-5" />,
-  Brain: <Brain className="w-5 h-5" />,
-  Database: <Database className="w-5 h-5" />,
-  Users: <Users className="w-5 h-5" />,
+const categoryIconMap: Record<string, React.ReactNode> = {
+  'cloud-platforms': <Cloud className="w-5 h-5" aria-hidden="true" />,
+  'containers-orchestration': <Server className="w-5 h-5" aria-hidden="true" />,
+  'iac': <Layers className="w-5 h-5" aria-hidden="true" />,
+  'cicd-automation': <Activity className="w-5 h-5" aria-hidden="true" />,
+  'monitoring': <Activity className="w-5 h-5" aria-hidden="true" />,
+  'security-access': <Shield className="w-5 h-5" aria-hidden="true" />,
+  'languages': <Cpu className="w-5 h-5" aria-hidden="true" />,
+  'web-mobile': <Layout className="w-5 h-5" aria-hidden="true" />,
+  'databases': <Database className="w-5 h-5" aria-hidden="true" />,
+  'data-ml': <Brain className="w-5 h-5" aria-hidden="true" />,
+  'design-web': <Sparkles className="w-5 h-5" aria-hidden="true" />,
+  'tools-methods': <Settings className="w-5 h-5" aria-hidden="true" />,
 };
 
 function SkillsContent() {
   const { language, t } = useLanguage();
+  const router = useRouter();
   const searchParams = useSearchParams();
-  const focusParam = searchParams.get('focus');
+  const initialCategory = searchParams.get('category') || 'all';
 
-  const { skillCategories, projects, certificates, experience } = portfolioData;
+  const { skillCategories, certificates } = portfolioData;
 
-  // Selected skill for the interactive graph (default to docker or query param)
-  const allSkills = skillCategories.flatMap((c) => c.skills);
-  const [selectedSkill, setSelectedSkill] = useState<SkillItem>(() => {
-    if (focusParam) {
-      const match = allSkills.find((s) => s.id === focusParam || s.name.toLowerCase() === focusParam.toLowerCase());
-      if (match) return match;
-    }
-    return allSkills[0]; // Docker
-  });
+  const [activeCategory, setActiveCategory] = useState<string>(initialCategory);
+  const [activeSkillId, setActiveSkillId] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (focusParam) {
-      const match = allSkills.find((s) => s.id === focusParam || s.name.toLowerCase() === focusParam.toLowerCase());
-      if (match) setSelectedSkill(match);
-    }
-  }, [focusParam]);
+  // Category counts
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {
+      all: skillCategories.reduce((acc, cat) => acc + cat.skills.length, 0),
+    };
+    skillCategories.forEach((cat) => {
+      counts[cat.id] = cat.skills.length;
+    });
+    return counts;
+  }, [skillCategories]);
 
-  // Derived graph relations for selected skill
-  const relatedProjects = projects.filter(
-    (p) =>
-      selectedSkill.projectSlugs.includes(p.slug) ||
-      (p.relatedSkillIds && p.relatedSkillIds.includes(selectedSkill.id)) ||
-      p.tags.some((t) => t.toLowerCase() === selectedSkill.name.toLowerCase())
-  );
+  // Filtered categories
+  const filteredCategories = useMemo(() => {
+    if (activeCategory === 'all') return skillCategories;
+    return skillCategories.filter((cat) => cat.id === activeCategory);
+  }, [skillCategories, activeCategory]);
 
-  const relatedCerts = certificates.filter(
-    (c) =>
-      selectedSkill.certificateIds?.includes(c.id) ||
-      c.relatedSkillIds?.includes(selectedSkill.id)
-  );
-
-  const relatedExperiences = experience.filter(
-    (e) =>
-      e.tags.some((t) => t.toLowerCase().includes(selectedSkill.name.toLowerCase())) ||
-      (selectedSkill.id === 'docker' && e.id === 'cloud-devops-intern') ||
-      (selectedSkill.id === 'terraform' && e.id === 'cloud-devops-intern')
-  );
+  // Handle skill click: filter Projects Hub by that technology
+  const handleSkillClick = (skill: SkillItem) => {
+    router.push(`/projects?search=${encodeURIComponent(skill.name)}`);
+  };
 
   return (
     <div className="py-28 relative min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
-        {/* Header */}
+        {/* Header Section */}
         <div className="space-y-4 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 font-mono text-xs border border-cyan-500/20">
-            <Cpu className="w-3.5 h-3.5" />
-            <span>{language === 'en' ? 'Competencies & Proof Mapping' : 'Compétences & Preuves Réelles'}</span>
+            <Cpu className="w-3.5 h-3.5" aria-hidden="true" />
+            <span>{language === 'en' ? 'Technical Competencies' : 'Compétences Techniques'}</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-display font-extrabold tracking-tight text-[var(--text-primary)]">
-            {language === 'en' ? 'Skills Matrix & Interactive Proof Graph' : 'Matrice & Graphe Interactif des Compétences'}
+            {language === 'en' ? 'Skills & Evidence-Backed Capabilities' : 'Compétences & Réalisations Vérifiées'}
           </h1>
 
           <p className="text-base sm:text-lg text-[var(--text-muted)] leading-relaxed">
             {language === 'en'
-              ? 'Click any technology below to explore its live connection to production architectures, verified credentials, and organizational experiences.'
-              : 'Cliquez sur n\'importe quelle technologie ci-dessous pour visualiser ses connexions directes avec mes projets, certifications et expériences.'}
+              ? 'Every skill is grounded in production deliverables, academic projects, or verified certifications. Hover or tap any skill to see where it was used, or click to filter related architectures in the Projects Hub.'
+              : 'Chaque compétence repose sur des livrables de production, des projets académiques ou des certifications vérifiées. Survolez ou touchez une compétence pour voir ses preuves réelles, ou cliquez pour filtrer les projets associés.'}
           </p>
         </div>
 
-        {/* INTERACTIVE SKILL-TO-PROJECT GRAPH PANEL */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950/40 to-slate-900 border-2 border-cyan-500/40 text-white shadow-2xl space-y-6 relative overflow-hidden">
-          
-          {/* Header of Active Graph Node */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-5">
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-400/40 text-cyan-400 flex items-center justify-center font-bold text-xl">
-                ⚡
-              </div>
-              <div>
-                <span className="text-[11px] font-mono text-cyan-400 uppercase tracking-wider block">
-                  {language === 'en' ? 'Active Proof Node' : 'Compétence Sélectionnée'}
+        {/* 1. CORE FOCUS STRIP (One row of chips highlighting main engineering profile) */}
+        <section aria-labelledby="core-focus-heading" className="space-y-3">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-cyan-400" aria-hidden="true" />
+            <h2 id="core-focus-heading" className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">
+              {language === 'en' ? 'Core Engineering Focus' : 'Cœur de Profil & Spécialisations'}
+            </h2>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2.5 p-4 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow-sm">
+            {coreFocusSkills.map((focus) => (
+              <button
+                key={focus}
+                onClick={() => router.push(`/projects?search=${encodeURIComponent(focus)}`)}
+                className="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-cyan-500/10 to-indigo-500/10 hover:from-cyan-500/20 hover:to-indigo-500/20 border border-cyan-500/30 text-cyan-400 dark:text-cyan-300 transition-all hover:scale-105 focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:outline-none"
+                title={`${language === 'en' ? 'Filter projects matching' : 'Filtrer les projets'} ${focus}`}
+              >
+                <span>{focus}</span>
+                <span className="ml-1 opacity-60">↗</span>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* 2. CATEGORY FILTER TABS (Projects Hub style with live counts) */}
+        <div className="flex flex-wrap items-center gap-2 p-4 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow-sm" role="tablist" aria-label="Skills Category Filter">
+          <button
+            role="tab"
+            aria-selected={activeCategory === 'all'}
+            onClick={() => setActiveCategory('all')}
+            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:outline-none ${
+              activeCategory === 'all'
+                ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold shadow-sm'
+                : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/5'
+            }`}
+          >
+            <span>{language === 'en' ? 'All Skills' : 'Toutes les Compétences'}</span>
+            <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${activeCategory === 'all' ? 'bg-white/20 text-white' : 'bg-black/10 dark:bg-white/10 text-[var(--text-muted)]'}`}>
+              {categoryCounts.all}
+            </span>
+          </button>
+
+          {skillCategories.map((cat) => {
+            const isActive = activeCategory === cat.id;
+            const count = categoryCounts[cat.id] ?? 0;
+
+            return (
+              <button
+                key={cat.id}
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:outline-none ${
+                  isActive
+                    ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold shadow-sm'
+                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/5'
+                }`}
+              >
+                <span>{t(cat.title)}</span>
+                <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-black/10 dark:bg-white/10 text-[var(--text-muted)]'}`}>
+                  {count}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-white">
-                  {selectedSkill.name}
-                </h2>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-white/10 border border-white/20 text-cyan-300">
-                {selectedSkill.level}
-              </span>
-              <span className="text-xs font-mono text-slate-400">
-                {relatedProjects.length} {language === 'en' ? 'projects proved' : 'projets validés'}
-              </span>
-            </div>
-          </div>
-
-          {/* Connected Entities Columns (3 cols) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* 1. Proved in Projects */}
-            <div className="p-5 rounded-2xl bg-slate-950/60 border border-white/10 space-y-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">
-                <FolderGit2 className="w-4 h-4" />
-                <span>{language === 'en' ? 'Proved in Projects' : 'Validé en Projets'} ({relatedProjects.length})</span>
-              </div>
-
-              {relatedProjects.length === 0 ? (
-                <p className="text-xs text-slate-400 italic">Academic lab and foundational coursework.</p>
-              ) : (
-                <div className="space-y-2">
-                  {relatedProjects.map((p) => (
-                    <Link
-                      key={p.slug}
-                      href={`/projects/${p.slug}`}
-                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-400/50 transition-all block group"
-                    >
-                      <div className="flex items-center justify-between text-xs font-bold text-white group-hover:text-cyan-400">
-                        <span>{p.title}</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                      <p className="text-[11px] text-slate-400 mt-1 line-clamp-1">
-                        {t(p.pitch)}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* 2. Proved in Certificates */}
-            <div className="p-5 rounded-2xl bg-slate-950/60 border border-white/10 space-y-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">
-                <Award className="w-4 h-4" />
-                <span>{language === 'en' ? 'Verified in Certifications' : 'Certifié par'} ({relatedCerts.length})</span>
-              </div>
-
-              {relatedCerts.length === 0 ? (
-                <p className="text-xs text-slate-400 italic">Applied production and engineering experience.</p>
-              ) : (
-                <div className="space-y-2">
-                  {relatedCerts.map((c) => (
-                    <a
-                      key={c.id}
-                      href={c.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber-400/50 transition-all block group"
-                    >
-                      <div className="flex items-center justify-between text-xs font-bold text-white group-hover:text-amber-300">
-                        <span>{t(c.title)}</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </div>
-                      <p className="text-[11px] text-slate-400 mt-1">
-                        {c.issuer} &middot; {c.year}
-                      </p>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* 3. Exercised in Experience */}
-            <div className="p-5 rounded-2xl bg-slate-950/60 border border-white/10 space-y-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">
-                <Layers className="w-4 h-4" />
-                <span>{language === 'en' ? 'Exercised in Roles' : 'Mobilisé en Rôles'} ({relatedExperiences.length})</span>
-              </div>
-
-              {relatedExperiences.length === 0 ? (
-                <p className="text-xs text-slate-400 italic">Specialized academic and prototyping research.</p>
-              ) : (
-                <div className="space-y-2">
-                  {relatedExperiences.map((e) => (
-                    <Link
-                      key={e.id}
-                      href="/experience"
-                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-400/50 transition-all block group"
-                    >
-                      <div className="flex items-center justify-between text-xs font-bold text-white group-hover:text-emerald-300">
-                        <span>{t(e.role)}</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </div>
-                      <p className="text-[11px] text-slate-400 mt-1">
-                        {e.organization} &middot; {e.period}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-          </div>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Categorized Skills Grids */}
-        <div className="space-y-8">
-          <div className="space-y-1">
-            <h2 className="text-2xl font-display font-bold text-[var(--text-primary)]">
-              {language === 'en' ? 'Competencies by Technical Domain' : 'Compétences par Domaine Technique'}
-            </h2>
-            <p className="text-xs sm:text-sm text-[var(--text-muted)]">
-              {language === 'en'
-                ? 'Select any badge below to recalculate the interactive proof graph.'
-                : 'Sélectionnez un badge ci-dessous pour recalculer le graphe de preuve.'}
+        {/* 3. SKILLS CATEGORY GRIDS */}
+        {filteredCategories.length === 0 ? (
+          <div className="p-16 text-center space-y-3 rounded-3xl bg-[var(--card-bg)] border border-[var(--border-color)]">
+            <Info className="w-10 h-10 text-[var(--text-muted)] mx-auto opacity-40" aria-hidden="true" />
+            <h3 className="font-display font-bold text-lg text-[var(--text-primary)]">
+              {language === 'en' ? 'No skills in this category' : 'Aucune compétence dans cette catégorie'}
+            </h3>
+            <p className="text-xs text-[var(--text-muted)]">
+              {language === 'en' ? 'Select another category tab to view skills.' : 'Sélectionnez un autre onglet pour afficher les compétences.'}
             </p>
           </div>
-
+        ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {skillCategories.map((category) => (
+            {filteredCategories.map((category) => (
               <div
                 key={category.id}
-                className="p-6 sm:p-7 rounded-3xl bg-[var(--card-bg)] border border-[var(--border-color)] flex flex-col justify-between group shadow-sm hover:border-cyan-500/40 transition-colors"
+                className="p-6 sm:p-7 rounded-3xl bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between group shadow-sm"
               >
                 <div>
-                  <div className="flex items-center gap-3.5 mb-4">
-                    <div className="w-11 h-11 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/20">
-                      {iconMap[category.icon] || <Cpu className="w-5 h-5" />}
+                  {/* Category Header */}
+                  <div className="flex items-center gap-3.5 mb-3">
+                    <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/20">
+                      {categoryIconMap[category.id] || <Cpu className="w-5 h-5" aria-hidden="true" />}
                     </div>
                     <div>
-                      <h3 className="font-display font-bold text-lg text-[var(--text-primary)]">
+                      <h3 className="font-display font-bold text-base sm:text-lg text-[var(--text-primary)]">
                         {t(category.title)}
                       </h3>
                       <span className="text-[11px] font-mono text-[var(--text-muted)]">
-                        {category.skills.length} {language === 'en' ? 'competencies' : 'compétences'}
+                        {category.skills.length} {language === 'en' ? 'skills' : 'compétences'}
                       </span>
                     </div>
                   </div>
@@ -264,30 +203,76 @@ function SkillsContent() {
                     {t(category.description)}
                   </p>
 
+                  {/* Skills Chips */}
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => {
-                      const isSelected = selectedSkill.id === skill.id;
+                      const isOpen = activeSkillId === skill.id;
+                      const evidenceList = skill.evidence || [];
+                      const hasEvidence = evidenceList.length > 0 || skill.projectSlugs.length > 0;
+
                       return (
-                        <button
-                          key={skill.id}
-                          onClick={() => {
-                            setSelectedSkill(skill);
-                            window.scrollTo({ top: 380, behavior: 'smooth' });
-                          }}
-                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
-                            isSelected
-                              ? 'bg-cyan-500 text-white font-bold shadow-md scale-105'
-                              : skill.isHighlight
-                              ? 'bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/20'
-                              : 'bg-black/5 dark:bg-white/5 border border-[var(--border-color)] text-[var(--text-secondary)] hover:border-cyan-500/40'
-                          }`}
-                        >
-                          {skill.isHighlight && <CheckCircle className="w-3 h-3" />}
-                          <span>{skill.name}</span>
-                          <span className={`text-[9px] font-mono ml-0.5 ${isSelected ? 'text-cyan-100' : 'opacity-60'}`}>
-                            {skill.level}
-                          </span>
-                        </button>
+                        <div key={skill.id} className="relative">
+                          <button
+                            type="button"
+                            onClick={() => setActiveSkillId(isOpen ? null : skill.id)}
+                            onMouseEnter={() => setActiveSkillId(skill.id)}
+                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:outline-none ${
+                              isOpen
+                                ? 'bg-cyan-500 text-white font-bold shadow-md scale-105'
+                                : 'bg-black/5 dark:bg-white/5 border border-[var(--border-color)] text-[var(--text-secondary)] hover:border-cyan-500/50 hover:text-[var(--text-primary)]'
+                            }`}
+                            aria-expanded={isOpen}
+                            aria-label={`${skill.name}. ${hasEvidence ? 'Has verified project evidence.' : ''} Click to view evidence or filter projects.`}
+                          >
+                            <span>{skill.name}</span>
+                            {hasEvidence && (
+                              <span
+                                className={`w-1.5 h-1.5 rounded-full ${isOpen ? 'bg-white' : 'bg-cyan-400'}`}
+                                title={language === 'en' ? 'Backed by project evidence' : 'Validé par des réalisations'}
+                              />
+                            )}
+                          </button>
+
+                          {/* Hover / Tap Evidence Indicator Popover */}
+                          {isOpen && hasEvidence && (
+                            <div
+                              onMouseLeave={() => setActiveSkillId(null)}
+                              className="absolute left-0 bottom-full mb-2 z-30 w-72 p-3.5 rounded-2xl bg-slate-950 border border-cyan-500/40 text-white shadow-2xl space-y-2 text-xs"
+                            >
+                              <div className="flex items-center justify-between border-b border-white/10 pb-1.5">
+                                <span className="font-mono text-[10px] text-cyan-400 uppercase tracking-wider font-semibold">
+                                  {language === 'en' ? 'Used in / Evidence' : 'Mobilisé dans / Preuves'}
+                                </span>
+                                <button
+                                  type="button"
+                                  onClick={() => handleSkillClick(skill)}
+                                  className="text-[10px] font-mono text-cyan-300 hover:underline inline-flex items-center gap-0.5"
+                                >
+                                  <span>{language === 'en' ? 'Projects Hub' : 'Voir Projets'}</span>
+                                  <ExternalLink className="w-2.5 h-2.5" />
+                                </button>
+                              </div>
+
+                              {/* Evidence Items */}
+                              <ul className="space-y-1.5">
+                                {evidenceList.map((item, eIdx) => (
+                                  <li key={eIdx}>
+                                    <Link
+                                      href={item.href}
+                                      className="inline-flex items-center gap-1.5 text-xs text-slate-200 hover:text-cyan-400 transition-colors"
+                                    >
+                                      {item.type === 'project' && <FolderGit2 className="w-3 h-3 text-cyan-400 shrink-0" />}
+                                      {item.type === 'cert' && <Award className="w-3 h-3 text-amber-400 shrink-0" />}
+                                      {item.type === 'role' && <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />}
+                                      <span className="line-clamp-1">{typeof item.title === 'string' ? item.title : t(item.title)}</span>
+                                      <ArrowRight className="w-2.5 h-2.5 ml-auto opacity-70" />
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
                       );
                     })}
                   </div>
@@ -295,7 +280,96 @@ function SkillsContent() {
               </div>
             ))}
           </div>
-        </div>
+        )}
+
+        {/* 4. SPOKEN LANGUAGES COMPACT BLOCK */}
+        <section aria-labelledby="spoken-languages-heading" className="p-6 sm:p-8 rounded-3xl bg-[var(--card-bg)] border border-[var(--border-color)] space-y-4">
+          <div className="flex items-center gap-2">
+            <Globe className="w-4 h-4 text-cyan-400" aria-hidden="true" />
+            <h2 id="spoken-languages-heading" className="text-base font-display font-bold text-[var(--text-primary)]">
+              {language === 'en' ? 'Language Proficiencies' : 'Compétences Linguistiques'}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {spokenLanguagesData.map((item, idx) => (
+              <div
+                key={idx}
+                className="p-4 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)] flex flex-col justify-between"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-display font-bold text-sm text-[var(--text-primary)]">
+                    {t(item.language)}
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                    {item.badge}
+                  </span>
+                </div>
+                <p className="text-xs text-[var(--text-muted)] mt-2">
+                  {t(item.level)}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 5. CERTIFICATIONS BLOCK (Linked to skills & Credly profile) */}
+        <section aria-labelledby="certifications-heading" className="p-6 sm:p-8 rounded-3xl bg-[var(--card-bg)] border border-[var(--border-color)] space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center border border-amber-500/20">
+                <Award className="w-4 h-4" aria-hidden="true" />
+              </div>
+              <div>
+                <h2 id="certifications-heading" className="text-lg font-display font-bold text-[var(--text-primary)]">
+                  {language === 'en' ? 'Verified Certifications & Accreditations' : 'Certifications & Accréditations Vérifiées'}
+                </h2>
+                <p className="text-xs text-[var(--text-muted)]">
+                  {language === 'en'
+                    ? 'All cloud, architecture, and developer credentials verified on official issuer registries.'
+                    : 'Diplômes et accréditations vérifiés sur les registres officiels.'}
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://www.credly.com/users/ranim-abidi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500/10 text-amber-400 hover:bg-amber-500 hover:text-white border border-amber-500/20 transition-all focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+              aria-label="View Ranim Abidi's verified badges on Credly"
+            >
+              <span>Credly Profile</span>
+              <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {certificates.map((cert) => (
+              <a
+                key={cert.id}
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)] hover:border-amber-500/40 transition-colors group flex flex-col justify-between focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+              >
+                <div>
+                  <div className="flex items-center justify-between text-[11px] font-mono text-[var(--text-muted)] mb-1">
+                    <span>{cert.issuer}</span>
+                    <span>{cert.year}</span>
+                  </div>
+                  <h3 className="font-display font-bold text-xs sm:text-sm text-[var(--text-primary)] group-hover:text-amber-400 transition-colors line-clamp-2">
+                    {t(cert.title)}
+                  </h3>
+                </div>
+                <div className="flex items-center justify-between pt-3 mt-3 border-t border-[var(--border-color)] text-[10px] font-mono text-cyan-400">
+                  <span>{cert.platform}</span>
+                  <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
 
       </div>
     </div>

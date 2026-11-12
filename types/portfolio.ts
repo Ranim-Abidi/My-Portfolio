@@ -56,13 +56,24 @@ export interface EducationItem {
   badge?: string;
 }
 
+export interface SkillEvidenceItem {
+  id: string;
+  title: Localized<string> | string;
+  slug?: string;
+  href: string;
+  type: 'project' | 'role' | 'cert';
+}
+
 export interface SkillItem {
   id: string;
   name: string;
-  level: 'Expert' | 'Advanced' | 'Proficient' | 'Familiar';
+  category?: string;
+  icon?: string;
+  level?: 'Expert' | 'Advanced' | 'Proficient' | 'Familiar' | string;
   isHighlight?: boolean;
   projectSlugs: string[];
   certificateIds?: string[];
+  evidence?: SkillEvidenceItem[];
 }
 
 export interface SkillCategory {
@@ -130,28 +141,73 @@ export interface ProjectItem {
   caseStudy: ProjectCaseStudy;
 }
 
-export interface ExperienceItem {
+export type ExperienceCategory = 'all' | 'devops-cloud' | 'fullstack' | 'data-ml' | 'iot';
+
+export interface EngineeringMilestone {
   id: string;
   period: string;
+  title: Localized<string>;
+  description?: Localized<string>;
+  link: {
+    label: Localized<string>;
+    href: string;
+    type: 'project' | 'role' | 'cert';
+  };
+}
+
+export interface ExperienceItem {
+  id: string;
   role: Localized<string>;
   organization: string;
   location: string;
-  category: 'work' | 'leadership' | 'competition' | 'mentoring';
+  workMode: 'Remote' | 'On-site' | 'Hybrid';
+  start: string;
+  end: string;
+  period: string;
+  summary: Localized<string>;
+  highlights: Localized<string[]>;
   bullets: Localized<string[]>;
+  tech: string[];
   tags: string[];
+  relatedProjectSlugs: string[];
+  categories: Array<'devops-cloud' | 'fullstack' | 'data-ml' | 'iot'>;
+  category?: 'work' | 'leadership' | 'competition' | 'mentoring' | string;
+  isCurrent?: boolean;
+  isCollapsible?: boolean;
+}
+
+export type LeadershipScope = 'Local' | 'National' | 'Regional' | 'International';
+export type LeadershipCategory = 'communities' | 'entrepreneurship' | 'mentoring';
+
+export interface LeadershipProgressionStep {
+  role: Localized<string>;
+  period: string;
+  summary?: Localized<string>;
 }
 
 export interface LeadershipRole {
   id: string;
+  role: Localized<string>;
   title: Localized<string>;
   organization: string;
+  scope: LeadershipScope;
+  category: LeadershipCategory;
+  start: string;
+  end: string;
   period: string;
   status: 'Current' | 'Completed';
-  scope: Localized<string>;
-  teamSize: string;
+  summary: Localized<string>;
+  highlights: Localized<string[]>;
+  link?: {
+    label: Localized<string>;
+    href: string;
+    type: 'project' | 'experience' | 'achievement';
+  };
+  progressionSteps?: LeadershipProgressionStep[];
+  teamSize?: string;
   budgetManaged?: string;
-  impactMetrics: Localized<string[]>;
-  responsibilities: Localized<string[]>;
+  impactMetrics?: Localized<string[]>;
+  responsibilities?: Localized<string[]>;
   photos?: string[];
 }
 

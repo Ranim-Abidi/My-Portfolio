@@ -2,297 +2,1428 @@ import { SkillCategory } from '@/types/portfolio';
 
 export const skillCategoriesData: SkillCategory[] = [
   {
-    id: 'cloud-devops',
+    id: 'cloud-platforms',
     title: {
-      en: 'Cloud & DevOps',
-      fr: 'Cloud & DevOps',
+      en: 'Cloud Platforms',
+      fr: 'Plateformes Cloud',
     },
     description: {
-      en: 'Infrastructure as Code, container orchestration, GitOps workflows and multi-cloud resilience.',
-      fr: 'Infrastructure as Code, orchestration de conteneurs, pratiques GitOps et haute disponibilité cloud.',
+      en: 'Cloud infrastructure deployment, resource isolation, virtual computing, and managed edge hosting.',
+      fr: 'Déploiement d’infrastructures cloud, isolation de ressources, calcul virtuel et hébergement managé.',
     },
     icon: 'Cloud',
     skills: [
       {
-        id: 'docker',
-        name: 'Docker',
-        level: 'Expert',
-        isHighlight: true,
-        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'matchy-khedma-cloud', 'eleganza-idss-ml'],
-        certificateIds: ['cert-docker-k8s'],
-      },
-      {
-        id: 'kubernetes',
-        name: 'Kubernetes',
-        level: 'Advanced',
-        isHighlight: true,
+        id: 'azure',
+        name: 'Microsoft Azure (VMs, IAM, networking)',
+        category: 'cloud-platforms',
         projectSlugs: ['matchy-khedma-cloud'],
-        certificateIds: ['cert-docker-k8s'],
-      },
-      {
-        id: 'cicd',
-        name: 'CI/CD Pipelines (GitHub Actions)',
-        level: 'Expert',
-        isHighlight: true,
-        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'matchy-khedma-cloud'],
-        certificateIds: ['cert-docker-k8s'],
-      },
-      {
-        id: 'terraform',
-        name: 'Terraform (IaC)',
-        level: 'Advanced',
-        isHighlight: true,
-        projectSlugs: ['matchy-khedma-cloud'],
-        certificateIds: ['cert-terraform'],
-      },
-      {
-        id: 'linux',
-        name: 'Linux / Bash Scripting',
-        level: 'Expert',
-        isHighlight: true,
-        projectSlugs: ['matchy-khedma-cloud', 'dash-analytics-hub'],
-        certificateIds: ['cert-docker-k8s'],
-      },
-      {
-        id: 'vercel',
-        name: 'Vercel / Cloudflare',
-        level: 'Expert',
-        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+        certificateIds: ['cert-aws-cloud-security'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+        ],
       },
       {
         id: 'aws',
-        name: 'AWS Core Services',
-        level: 'Advanced',
-        projectSlugs: ['matchy-khedma-cloud'],
-        certificateIds: ['cert-aws-cloud'],
+        name: 'AWS (EC2, S3)',
+        category: 'cloud-platforms',
+        projectSlugs: [],
+        certificateIds: ['cert-aws-cloud-operations', 'cert-aws-cloud-security'],
+        evidence: [
+          {
+            id: 'cert-aws-cloud-operations',
+            title: 'AWS Academy Graduate: Cloud Operations',
+            href: 'https://www.credly.com/users/ranim-abidi',
+            type: 'cert',
+          },
+          {
+            id: 'cert-aws-cloud-security',
+            title: 'AWS Academy Graduate: Cloud Security Foundations',
+            href: 'https://www.credly.com/users/ranim-abidi',
+            type: 'cert',
+          },
+        ],
       },
       {
-        id: 'prometheus',
-        name: 'Prometheus & Grafana',
-        level: 'Proficient',
-        projectSlugs: ['matchy-khedma-cloud'],
+        id: 'gcp',
+        name: 'Google Cloud',
+        category: 'cloud-platforms',
+        projectSlugs: [],
+        certificateIds: ['cert-gcp-devops', 'cert-gcp-data-ml'],
+        evidence: [
+          {
+            id: 'cert-gcp-devops',
+            title: 'Google Cloud Skill Badges: Cloud & DevOps Track',
+            href: 'https://www.credly.com/users/ranim-abidi',
+            type: 'cert',
+          },
+          {
+            id: 'cert-gcp-data-ml',
+            title: 'Google Cloud Skill Badges: Data & ML Track',
+            href: 'https://www.credly.com/users/ranim-abidi',
+            type: 'cert',
+          },
+        ],
       },
       {
         id: 'openstack',
-        name: 'OpenStack & Helm',
-        level: 'Proficient',
+        name: 'OpenStack',
+        category: 'cloud-platforms',
         projectSlugs: ['matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'vercel',
+        name: 'Vercel',
+        category: 'cloud-platforms',
+        projectSlugs: ['dash-analytics-hub', 'dejitalist-saas'],
+        evidence: [
+          {
+            id: 'dash-aiesec',
+            title: 'DASH (Data Analytics System Hub)',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
       },
     ],
   },
+
   {
-    id: 'backend',
+    id: 'containers-orchestration',
     title: {
-      en: 'Backend & APIs',
-      fr: 'Backend & APIs',
+      en: 'Containers & Orchestration',
+      fr: 'Conteneurs & Orchestration',
     },
     description: {
-      en: 'High-throughput microservices, REST/GraphQL standards, authentication protocols and clean architecture.',
-      fr: 'Microservices haute performance, architectures RESTful, protocoles d\'authentification et code maintenable.',
+      en: 'Containerization, cluster scheduling, package templating, and reverse proxying.',
+      fr: 'Conteneurisation, ordonnancement de clusters, packaging déclaratif et proxys inverses.',
     },
     icon: 'Server',
     skills: [
       {
-        id: 'nodejs',
-        name: 'Node.js / Express',
-        level: 'Expert',
-        isHighlight: true,
-        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+        id: 'docker',
+        name: 'Docker',
+        category: 'containers-orchestration',
+        projectSlugs: ['eleganza-idss-ml', 'matchy-khedma-cloud', 'dash-analytics-hub', 'dejitalist-saas'],
+        certificateIds: ['cert-docker-k8s'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'dash-aiesec',
+            title: 'DASH',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
       },
       {
-        id: 'fastapi',
-        name: 'FastAPI / Python',
-        level: 'Expert',
-        isHighlight: true,
-        projectSlugs: ['eleganza-idss-ml'],
-        certificateIds: ['cert-fastapi-ai'],
-      },
-      {
-        id: 'spring-boot',
-        name: 'Spring Boot (Java)',
-        level: 'Advanced',
+        id: 'kubernetes',
+        name: 'Kubernetes',
+        category: 'containers-orchestration',
         projectSlugs: ['matchy-khedma-cloud'],
+        certificateIds: ['cert-docker-k8s', 'cert-gcp-devops'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'cert-docker-k8s',
+            title: 'Docker & Kubernetes: Cloud-Native Mastery',
+            href: 'https://www.credly.com/users/ranim-abidi',
+            type: 'cert',
+          },
+        ],
       },
       {
-        id: 'microservices',
-        name: 'Microservices Architecture',
-        level: 'Advanced',
-        isHighlight: true,
-        projectSlugs: ['dejitalist-saas', 'matchy-khedma-cloud', 'eleganza-idss-ml'],
+        id: 'helm',
+        name: 'Helm',
+        category: 'containers-orchestration',
+        projectSlugs: ['matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+        ],
       },
       {
-        id: 'auth-jwt',
-        name: 'JWT & OAuth2 Security',
-        level: 'Expert',
-        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+        id: 'nginx',
+        name: 'Nginx',
+        category: 'containers-orchestration',
+        projectSlugs: ['eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
       },
     ],
   },
+
   {
-    id: 'frontend',
+    id: 'iac',
     title: {
-      en: 'Modern Frontend',
-      fr: 'Frontend Moderne',
+      en: 'Infrastructure as Code',
+      fr: 'Infrastructure as Code (IaC)',
     },
     description: {
-      en: 'Responsive, accessible, server-rendered web applications with motion design and design systems.',
-      fr: 'Applications web réactives, accessibles, optimisées SSR/SSG avec design system et micro-interactions.',
+      en: 'Declarative resource provisioning, configuration automation, and repeatable cloud environments.',
+      fr: 'Provisioning déclaratif de ressources, automatisation des configurations et reproductibilité.',
+    },
+    icon: 'Layers',
+    skills: [
+      {
+        id: 'terraform',
+        name: 'Terraform',
+        category: 'iac',
+        projectSlugs: ['matchy-khedma-cloud'],
+        certificateIds: ['cert-terraform'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'cert-terraform',
+            title: 'HashiCorp Certified: Terraform Associate',
+            href: 'https://www.credly.com/users/ranim-abidi',
+            type: 'cert',
+          },
+        ],
+      },
+      {
+        id: 'ansible',
+        name: 'Ansible',
+        category: 'iac',
+        projectSlugs: ['matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'cicd-automation',
+    title: {
+      en: 'CI/CD & Automation',
+      fr: 'CI/CD & Automatisation',
+    },
+    description: {
+      en: 'Automated lint, test, build, audit, and deployment delivery pipelines.',
+      fr: 'Pipelines automatisés de lint, tests, build, audits de sécurité et déploiement continu.',
+    },
+    icon: 'Activity',
+    skills: [
+      {
+        id: 'github-actions',
+        name: 'GitHub Actions',
+        category: 'cicd-automation',
+        projectSlugs: ['dash-analytics-hub', 'matchy-khedma-cloud', 'dejitalist-saas'],
+        evidence: [
+          {
+            id: 'dash-aiesec',
+            title: 'DASH (Sole DevOps Engineer)',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'jenkins',
+        name: 'Jenkins',
+        category: 'cicd-automation',
+        projectSlugs: [],
+        evidence: [
+          {
+            id: 'cloud-devops-intern',
+            title: 'Cloud & DevOps Engineering Labs (ESPRIT)',
+            href: '/experience',
+            type: 'role',
+          },
+        ],
+      },
+      {
+        id: 'n8n',
+        name: 'n8n',
+        category: 'cicd-automation',
+        projectSlugs: ['eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'monitoring',
+    title: {
+      en: 'Monitoring & Observability',
+      fr: 'Monitoring & Observabilité',
+    },
+    description: {
+      en: 'Time-series metric scrapers, cluster telemetry, alerting thresholds, and visual operational dashboards.',
+      fr: 'Collecte de métriques chronologiques, télémétrie de cluster, alertes et tableaux de bord opérationnels.',
+    },
+    icon: 'Activity',
+    skills: [
+      {
+        id: 'prometheus',
+        name: 'Prometheus',
+        category: 'monitoring',
+        projectSlugs: ['matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'grafana',
+        name: 'Grafana',
+        category: 'monitoring',
+        projectSlugs: ['matchy-khedma-cloud', 'dash-analytics-hub'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'dash-aiesec',
+            title: 'DASH Performance Monitoring',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'security-access',
+    title: {
+      en: 'Security & Access',
+      fr: 'Sécurité & Contrôle d’Accès',
+    },
+    description: {
+      en: 'Identity management, role-based authorization, token verification, and secure networking.',
+      fr: 'Gestion des identités, habilitations par rôle, validation de jetons et sécurité réseau.',
+    },
+    icon: 'Shield',
+    skills: [
+      {
+        id: 'iam',
+        name: 'IAM',
+        category: 'security-access',
+        projectSlugs: ['matchy-khedma-cloud'],
+        certificateIds: ['cert-aws-cloud-security'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Azure IAM)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'aiesec-greece',
+            title: 'AIESEC in Greece (Access Management)',
+            href: '/experience',
+            type: 'role',
+          },
+        ],
+      },
+      {
+        id: 'rbac',
+        name: 'RBAC',
+        category: 'security-access',
+        projectSlugs: ['matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Azure IAM RBAC)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'aiesec-greece',
+            title: 'AIESEC in Greece (Directory Permissions)',
+            href: '/experience',
+            type: 'role',
+          },
+        ],
+      },
+      {
+        id: 'oauth2',
+        name: 'OAuth 2.0',
+        category: 'security-access',
+        projectSlugs: ['dash-analytics-hub'],
+        evidence: [
+          {
+            id: 'dash-aiesec',
+            title: 'DASH (EXPA OAuth 2.0 Ingestion)',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'jwt',
+        name: 'JWT',
+        category: 'security-access',
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist (Session Auth & KVKK)',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+          {
+            id: 'dash-aiesec',
+            title: 'DASH',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'networking-security',
+        name: 'Networking and security basics',
+        category: 'security-access',
+        projectSlugs: ['matchy-khedma-cloud'],
+        certificateIds: ['cert-aws-cloud-security'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Neutron Network Topology)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'aiesec-greece',
+            title: 'AIESEC in Greece (Server Administration)',
+            href: '/experience',
+            type: 'role',
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'languages',
+    title: {
+      en: 'Programming Languages',
+      fr: 'Langages de Programmation',
+    },
+    description: {
+      en: 'Backend systems programming, typed modern scripts, data processing, and query languages.',
+      fr: 'Programmation système, typage statique, traitement de données et requêtage relationnel.',
+    },
+    icon: 'Cpu',
+    skills: [
+      {
+        id: 'python',
+        name: 'Python',
+        category: 'languages',
+        projectSlugs: ['eleganza-idss-ml', 'oxit-smart-agriculture', 'chicago-crimes-analytics', 'pharmacy-reimbursement-analytics'],
+        certificateIds: ['cert-gcp-data-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+          {
+            id: 'oxit-agri',
+            title: 'OXIT (Founder)',
+            href: '/projects/oxit-smart-agriculture',
+            type: 'project',
+          },
+          {
+            id: 'chicago-crimes',
+            title: 'Crimes in Chicago Analytics',
+            href: '/projects/chicago-crimes-analytics',
+            type: 'project',
+          },
+          {
+            id: 'pharmacy-reimb',
+            title: 'Pharmacy Reimbursement Dashboard',
+            href: '/projects/pharmacy-reimbursement-analytics',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'javascript',
+        name: 'JavaScript',
+        category: 'languages',
+        projectSlugs: ['dash-analytics-hub', 'dejitalist-saas', 'atb-environmental-assessment'],
+        evidence: [
+          {
+            id: 'dash-aiesec',
+            title: 'DASH',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+          {
+            id: 'atb-platform',
+            title: 'Environmental Assessment Platform (ATB)',
+            href: '/projects/atb-environmental-assessment',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'typescript',
+        name: 'TypeScript',
+        category: 'languages',
+        projectSlugs: ['dejitalist-saas'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist (Turborepo monorepo)',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'java',
+        name: 'Java',
+        category: 'languages',
+        projectSlugs: ['matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Spring Boot backend)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'bash',
+        name: 'Bash',
+        category: 'languages',
+        projectSlugs: ['matchy-khedma-cloud', 'dash-analytics-hub'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Ansible & Linux scripting)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'dash-aiesec',
+            title: 'DASH (CI/CD scripts)',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'sql',
+        name: 'SQL',
+        category: 'languages',
+        projectSlugs: ['dejitalist-saas', 'matchy-khedma-cloud', 'pharmacy-reimbursement-analytics', 'atb-environmental-assessment'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist (PostgreSQL)',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (MySQL)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'pharmacy-reimb',
+            title: 'Pharmacy Reimbursement (SQL modeling)',
+            href: '/projects/pharmacy-reimbursement-analytics',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'plsql',
+        name: 'PL/SQL',
+        category: 'languages',
+        projectSlugs: [],
+        evidence: [
+          {
+            id: 'academic-db',
+            title: 'Relational Database Engineering Coursework (ISI Kef / ESPRIT)',
+            href: '/about',
+            type: 'role',
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'web-mobile',
+    title: {
+      en: 'Web & Mobile',
+      fr: 'Web & Mobile',
+    },
+    description: {
+      en: 'Component-driven frontends, cross-platform mobile apps, and robust API frameworks.',
+      fr: 'Interfaces modulaires, applications mobiles multiplateformes et frameworks d’APIs.',
     },
     icon: 'Layout',
     skills: [
       {
         id: 'react',
         name: 'React',
-        level: 'Expert',
-        isHighlight: true,
-        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'eleganza-idss-ml'],
+        category: 'web-mobile',
+        projectSlugs: ['dash-analytics-hub', 'dejitalist-saas', 'eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'dash-aiesec',
+            title: 'DASH',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
       },
       {
         id: 'nextjs',
-        name: 'Next.js (App Router)',
-        level: 'Expert',
-        isHighlight: true,
+        name: 'Next.js',
+        category: 'web-mobile',
         projectSlugs: ['dejitalist-saas'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist (App Router)',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
       },
       {
-        id: 'typescript',
-        name: 'TypeScript',
-        level: 'Expert',
-        isHighlight: true,
+        id: 'angular',
+        name: 'Angular',
+        category: 'web-mobile',
+        projectSlugs: ['matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Angular Client)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'nodejs',
+        name: 'Node.js',
+        category: 'web-mobile',
+        projectSlugs: ['dash-analytics-hub', 'dejitalist-saas', 'atb-environmental-assessment'],
+        evidence: [
+          {
+            id: 'dash-aiesec',
+            title: 'DASH',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+          {
+            id: 'atb-platform',
+            title: 'ATB Environmental Platform',
+            href: '/projects/atb-environmental-assessment',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'nestjs',
+        name: 'NestJS',
+        category: 'web-mobile',
         projectSlugs: ['dejitalist-saas'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist (Backend API)',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'spring-boot',
+        name: 'Spring Boot',
+        category: 'web-mobile',
+        projectSlugs: ['matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Cloud PI Microservice)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'flask',
+        name: 'Flask',
+        category: 'web-mobile',
+        projectSlugs: ['oxit-smart-agriculture'],
+        evidence: [
+          {
+            id: 'oxit-agri',
+            title: 'OXIT (Telemetry Microservice)',
+            href: '/projects/oxit-smart-agriculture',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'fastapi',
+        name: 'FastAPI',
+        category: 'web-mobile',
+        projectSlugs: ['eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS (Async ML Service)',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'flutter',
+        name: 'Flutter',
+        category: 'web-mobile',
+        projectSlugs: ['oxit-smart-agriculture', 'el-tarf-eco-tourism'],
+        certificateIds: ['cert-flutter-google'],
+        evidence: [
+          {
+            id: 'oxit-agri',
+            title: 'OXIT (Mobile Irrigation App)',
+            href: '/projects/oxit-smart-agriculture',
+            type: 'project',
+          },
+          {
+            id: 'el-tarf',
+            title: 'AI Eco-Tourism App (El Tarf)',
+            href: '/projects/el-tarf-eco-tourism',
+            type: 'project',
+          },
+          {
+            id: 'cert-flutter-google',
+            title: 'Flutter App Development (Google Developers)',
+            href: 'https://www.credly.com/users/ranim-abidi',
+            type: 'cert',
+          },
+        ],
       },
       {
         id: 'tailwind',
         name: 'Tailwind CSS',
-        level: 'Expert',
-        isHighlight: true,
-        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+        category: 'web-mobile',
+        projectSlugs: ['dash-analytics-hub', 'dejitalist-saas'],
+        evidence: [
+          {
+            id: 'dash-aiesec',
+            title: 'DASH',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
       },
       {
-        id: 'framer-motion',
-        name: 'Framer Motion',
-        level: 'Advanced',
-        projectSlugs: ['dejitalist-saas'],
+        id: 'rest-apis',
+        name: 'REST APIs',
+        category: 'web-mobile',
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'eleganza-idss-ml', 'atb-environmental-assessment'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+          {
+            id: 'dash-aiesec',
+            title: 'DASH',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+        ],
       },
     ],
   },
-  {
-    id: 'data-ai',
-    title: {
-      en: 'Data & Applied AI',
-      fr: 'Données & IA Appliquée',
-    },
-    description: {
-      en: 'Predictive modeling, data analytics pipelines, semantic search and decision support systems.',
-      fr: 'Modélisation prédictive, pipelines d\'analyse de données, recherche sémantique et systèmes d\'aide à la décision.',
-    },
-    icon: 'Brain',
-    skills: [
-      {
-        id: 'python',
-        name: 'Python (Pandas, NumPy)',
-        level: 'Advanced',
-        isHighlight: true,
-        projectSlugs: ['eleganza-idss-ml', 'oxit-smart-agriculture', 'chicago-crimes-analytics', 'pharmacy-reimbursement-analytics'],
-        certificateIds: ['cert-fastapi-ai'],
-      },
-      {
-        id: 'scikit-learn',
-        name: 'Scikit-learn / ML Modeling',
-        level: 'Advanced',
-        isHighlight: true,
-        projectSlugs: ['eleganza-idss-ml', 'chicago-crimes-analytics'],
-        certificateIds: ['cert-fastapi-ai'],
-      },
-      {
-        id: 'data-pipeline',
-        name: 'Data Pipeline Design (ETL)',
-        level: 'Advanced',
-        isHighlight: true,
-        projectSlugs: ['dash-analytics-hub', 'eleganza-idss-ml', 'pharmacy-reimbursement-analytics'],
-      },
-      {
-        id: 'bi-tools',
-        name: 'Data Visualization & BI',
-        level: 'Expert',
-        projectSlugs: ['dash-analytics-hub', 'pharmacy-reimbursement-analytics', 'chicago-crimes-analytics'],
-      },
-    ],
-  },
+
   {
     id: 'databases',
     title: {
-      en: 'Databases & Storage',
-      fr: 'Bases de Données & Stockage',
+      en: 'Databases & ORMs',
+      fr: 'Bases de Données & ORMs',
     },
     description: {
-      en: 'Relational ACID schemas, serverless PostgreSQL, document stores and in-memory caches.',
-      fr: 'Schémas relationnels normalisés, PostgreSQL serverless, magasins NoSQL et caches mémoire.',
+      en: 'Relational storage, document stores, real-time sync engines, and type-safe query builders.',
+      fr: 'Bases relationnelles, orientées documents, synchronisation temps réel et ORMs typés.',
     },
     icon: 'Database',
     skills: [
       {
         id: 'postgresql',
-        name: 'PostgreSQL / Neon',
-        level: 'Expert',
-        isHighlight: true,
-        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'eleganza-idss-ml'],
+        name: 'PostgreSQL',
+        category: 'databases',
+        projectSlugs: ['dejitalist-saas'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist (Multi-Tenant Schema)',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
       },
       {
         id: 'mongodb',
         name: 'MongoDB',
-        level: 'Advanced',
-        isHighlight: true,
-        projectSlugs: [],
+        category: 'databases',
+        projectSlugs: ['dash-analytics-hub'],
+        evidence: [
+          {
+            id: 'dash-aiesec',
+            title: 'DASH (Document Collections & Aggregations)',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'mysql',
+        name: 'MySQL',
+        category: 'databases',
+        projectSlugs: ['matchy-khedma-cloud', 'atb-environmental-assessment'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (Relational Database)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'atb-platform',
+            title: 'ATB Environmental Platform',
+            href: '/projects/atb-environmental-assessment',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'firebase',
+        name: 'Firebase',
+        category: 'databases',
+        projectSlugs: ['oxit-smart-agriculture', 'el-tarf-eco-tourism'],
+        evidence: [
+          {
+            id: 'oxit-agri',
+            title: 'OXIT (Realtime Database & Sensor Sync)',
+            href: '/projects/oxit-smart-agriculture',
+            type: 'project',
+          },
+          {
+            id: 'el-tarf',
+            title: 'AI Eco-Tourism App (El Tarf)',
+            href: '/projects/el-tarf-eco-tourism',
+            type: 'project',
+          },
+        ],
       },
       {
         id: 'prisma',
-        name: 'Prisma / Drizzle ORM',
-        level: 'Advanced',
+        name: 'Prisma',
+        category: 'databases',
         projectSlugs: ['dejitalist-saas'],
-      },
-      {
-        id: 'redis',
-        name: 'Redis Cache',
-        level: 'Proficient',
-        projectSlugs: ['dejitalist-saas'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist (Type-safe ORM & Migrations)',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
       },
     ],
   },
+
   {
-    id: 'leadership',
+    id: 'data-ml',
     title: {
-      en: 'Leadership & Governance',
-      fr: 'Leadership & Gouvernance',
+      en: 'Data & ML',
+      fr: 'Données & Machine Learning',
     },
     description: {
-      en: 'Strategic decision making, team mentorship, budget governance and multicultural collaboration.',
-      fr: 'Vision stratégique, encadrement d\'équipes, gouvernance financière et négociation internationale.',
+      en: 'Predictive modeling, business intelligence, cluster discovery, reinforcement learning, and IoT workflows.',
+      fr: 'Modélisation prédictive, business intelligence, clustering, apprentissage par renforcement et flux IoT.',
     },
-    icon: 'Users',
+    icon: 'Brain',
     skills: [
       {
-        id: 'team-leadership',
-        name: 'Cross-functional Team Leadership',
-        level: 'Expert',
-        isHighlight: true,
-        projectSlugs: ['dash-analytics-hub'],
-        certificateIds: ['cert-aiesec-leadership'],
+        id: 'power-bi',
+        name: 'Power BI',
+        category: 'data-ml',
+        projectSlugs: ['pharmacy-reimbursement-analytics'],
+        certificateIds: ['cert-ibm-skillsbuild-data'],
+        evidence: [
+          {
+            id: 'pharmacy-reimb',
+            title: 'Pharmacy Reimbursement Dashboard',
+            href: '/projects/pharmacy-reimbursement-analytics',
+            type: 'project',
+          },
+        ],
       },
       {
-        id: 'budgeting',
-        name: 'Budgeting & Financial Auditing',
-        level: 'Expert',
-        isHighlight: true,
+        id: 'pandas',
+        name: 'Pandas',
+        category: 'data-ml',
+        projectSlugs: ['chicago-crimes-analytics', 'eleganza-idss-ml', 'pharmacy-reimbursement-analytics'],
+        evidence: [
+          {
+            id: 'chicago-crimes',
+            title: 'Crimes in Chicago Analytics',
+            href: '/projects/chicago-crimes-analytics',
+            type: 'project',
+          },
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'scikit-learn',
+        name: 'Scikit-learn',
+        category: 'data-ml',
+        projectSlugs: ['chicago-crimes-analytics', 'eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'chicago-crimes',
+            title: 'Crimes in Chicago (Random Forest & K-Means)',
+            href: '/projects/chicago-crimes-analytics',
+            type: 'project',
+          },
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'lightgbm',
+        name: 'LightGBM',
+        category: 'data-ml',
+        projectSlugs: ['eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS (Quantile Regression)',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'xgboost',
+        name: 'XGBoost',
+        category: 'data-ml',
+        projectSlugs: ['eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS (Demand Forecasting)',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'optuna',
+        name: 'Optuna',
+        category: 'data-ml',
+        projectSlugs: ['eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS (Hyperparameter Tuning)',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'hdbscan',
+        name: 'HDBSCAN',
+        category: 'data-ml',
+        projectSlugs: ['eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS (Basket Clustering)',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'umap',
+        name: 'UMAP',
+        category: 'data-ml',
+        projectSlugs: ['eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS (Dimensionality Reduction)',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'plotly-dash',
+        name: 'Plotly Dash',
+        category: 'data-ml',
+        projectSlugs: ['chicago-crimes-analytics'],
+        evidence: [
+          {
+            id: 'chicago-crimes',
+            title: 'Crimes in Chicago Dashboard',
+            href: '/projects/chicago-crimes-analytics',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'metabase',
+        name: 'Metabase',
+        category: 'data-ml',
+        projectSlugs: ['eleganza-idss-ml'],
+        evidence: [
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS (BI Reporting)',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'chartjs',
+        name: 'Chart.js',
+        category: 'data-ml',
+        projectSlugs: ['dash-analytics-hub', 'atb-environmental-assessment'],
+        evidence: [
+          {
+            id: 'dash-aiesec',
+            title: 'DASH (Exchange Funnel Charts)',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+          {
+            id: 'atb-platform',
+            title: 'ATB Environmental Platform',
+            href: '/projects/atb-environmental-assessment',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'rl-ppo',
+        name: 'reinforcement learning (PPO)',
+        category: 'data-ml',
+        projectSlugs: ['oxit-smart-agriculture'],
+        evidence: [
+          {
+            id: 'oxit-agri',
+            title: 'OXIT (Intelligent Irrigation Policy)',
+            href: '/projects/oxit-smart-agriculture',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'iot-workflows',
+        name: 'IoT sensor data workflows',
+        category: 'data-ml',
+        projectSlugs: ['oxit-smart-agriculture'],
+        evidence: [
+          {
+            id: 'oxit-agri',
+            title: 'OXIT (ESP32 Telemetry Loop)',
+            href: '/projects/oxit-smart-agriculture',
+            type: 'project',
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'design-web',
+    title: {
+      en: 'Design & Web Standards',
+      fr: 'Design & Standards Web',
+    },
+    description: {
+      en: 'Interface prototyping, vector assets, search engine discoverability, and accessibility compliance.',
+      fr: 'Prototypage d’interfaces, création vectorielle, référencement et accessibilité numérique.',
+    },
+    icon: 'Sparkles',
+    skills: [
+      {
+        id: 'ui-ux-wireframing',
+        name: 'UI/UX wireframing',
+        category: 'design-web',
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist (Merchant Dashboard Design)',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+          {
+            id: 'dash-aiesec',
+            title: 'DASH (Custom Widgets Layout)',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'photoshop',
+        name: 'Adobe Photoshop',
+        category: 'design-web',
         projectSlugs: [],
-        certificateIds: ['cert-aiesec-leadership'],
+        evidence: [
+          {
+            id: 'design-creative',
+            title: 'National & Local Creative Media (AIESEC Tunisia)',
+            href: '/leadership',
+            type: 'role',
+          },
+        ],
+      },
+      {
+        id: 'illustrator',
+        name: 'Adobe Illustrator',
+        category: 'design-web',
+        projectSlugs: [],
+        evidence: [
+          {
+            id: 'design-branding',
+            title: 'Vector Branding & Identity Systems',
+            href: '/leadership',
+            type: 'role',
+          },
+        ],
+      },
+      {
+        id: 'seo',
+        name: 'SEO',
+        category: 'design-web',
+        projectSlugs: ['dejitalist-saas'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist (Dynamic Metadata & Sitemap)',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'web-accessibility',
+        name: 'web accessibility',
+        category: 'design-web',
+        projectSlugs: ['dash-analytics-hub', 'dejitalist-saas'],
+        evidence: [
+          {
+            id: 'portfolio-system',
+            title: 'Semantic HTML & WCAG Focus Engineering',
+            href: '/projects',
+            type: 'project',
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'tools-methods',
+    title: {
+      en: 'Tools & Methods',
+      fr: 'Outils & Méthodes',
+    },
+    description: {
+      en: 'Version control, issue tracking, agile collaboration frameworks, and academic documentation.',
+      fr: 'Gestion de versions, suivi de tickets, méthodes agiles et documentation technique.',
+    },
+    icon: 'Settings',
+    skills: [
+      {
+        id: 'linux',
+        name: 'Linux',
+        category: 'tools-methods',
+        projectSlugs: ['matchy-khedma-cloud', 'eleganza-idss-ml', 'dash-analytics-hub'],
+        evidence: [
+          {
+            id: 'matchy-khedma',
+            title: 'Matchy Khedma (OpenStack Host Nodes)',
+            href: '/projects/matchy-khedma-cloud',
+            type: 'project',
+          },
+          {
+            id: 'eleganza-idss',
+            title: 'Eleganza IDSS',
+            href: '/projects/eleganza-idss-ml',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'git',
+        name: 'Git',
+        category: 'tools-methods',
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'dejitalist',
+            title: 'Dejitalist',
+            href: '/projects/dejitalist-saas',
+            type: 'project',
+          },
+          {
+            id: 'dash-aiesec',
+            title: 'DASH',
+            href: '/projects/dash-analytics-hub',
+            type: 'project',
+          },
+        ],
+      },
+      {
+        id: 'github',
+        name: 'GitHub',
+        category: 'tools-methods',
+        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub', 'matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'github-portfolio',
+            title: 'Public & Enterprise GitHub Repositories',
+            href: 'https://github.com/Ranim-Abidi',
+            type: 'role',
+          },
+        ],
+      },
+      {
+        id: 'jira',
+        name: 'JIRA',
+        category: 'tools-methods',
+        projectSlugs: [],
+        evidence: [
+          {
+            id: 'agile-management',
+            title: 'Sprint Planning & Backlog Management (ESPRIT PI)',
+            href: '/about',
+            type: 'role',
+          },
+        ],
+      },
+      {
+        id: 'confluence',
+        name: 'Confluence',
+        category: 'tools-methods',
+        projectSlugs: [],
+        evidence: [
+          {
+            id: 'confluence-docs',
+            title: 'Technical Runbooks & Architecture Documentation',
+            href: '/about',
+            type: 'role',
+          },
+        ],
       },
       {
         id: 'agile',
-        name: 'Agile / Scrum Project Management',
-        level: 'Expert',
-        projectSlugs: ['dejitalist-saas', 'dash-analytics-hub'],
+        name: 'Agile',
+        category: 'tools-methods',
+        projectSlugs: [],
+        evidence: [
+          {
+            id: 'agile-delivery',
+            title: 'Weekly Sprint Governance across Cross-Functional Teams',
+            href: '/leadership',
+            type: 'role',
+          },
+        ],
+      },
+      {
+        id: 'uml',
+        name: 'UML',
+        category: 'tools-methods',
+        projectSlugs: ['dejitalist-saas', 'matchy-khedma-cloud'],
+        evidence: [
+          {
+            id: 'academic-uml',
+            title: 'System Design Class & Sequence Modeling (ISI Kef / ESPRIT)',
+            href: '/about',
+            type: 'role',
+          },
+        ],
+      },
+      {
+        id: 'latex',
+        name: 'LaTeX',
+        category: 'tools-methods',
+        projectSlugs: [],
+        evidence: [
+          {
+            id: 'latex-academic',
+            title: 'Academic Theses & Technical Research Papers',
+            href: '/about',
+            type: 'role',
+          },
+        ],
       },
     ],
+  },
+];
+
+export const coreFocusSkills = [
+  'Cloud',
+  'DevOps',
+  'CI/CD',
+  'Containers',
+  'IaC',
+  'Full-Stack',
+  'Data & ML',
+];
+
+export const spokenLanguagesData = [
+  {
+    language: { en: 'Arabic', fr: 'Arabe' },
+    level: { en: 'Native', fr: 'Langue maternelle' },
+    badge: 'Native',
+  },
+  {
+    language: { en: 'English', fr: 'Anglais' },
+    level: { en: 'C1, Professional working proficiency', fr: 'C1, Compétence professionnelle' },
+    badge: 'C1',
+  },
+  {
+    language: { en: 'French', fr: 'Français' },
+    level: { en: 'B2, Upper intermediate', fr: 'B2, Intermédiaire supérieur' },
+    badge: 'B2',
+  },
+  {
+    language: { en: 'Italian', fr: 'Italien' },
+    level: { en: 'A2, Elementary', fr: 'A2, Élémentaire' },
+    badge: 'A2',
   },
 ];
