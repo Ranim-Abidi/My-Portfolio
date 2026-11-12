@@ -222,20 +222,45 @@ export type AchievementPlatform =
   | 'AIESEC'
   | 'University';
 
-export interface CertificateItem {
+export type AchievementCategory =
+  | 'competitions'
+  | 'entrepreneurship'
+  | 'recognition'
+  | 'certifications';
+
+export type AchievementResult =
+  | '1st Place'
+  | '2nd Place'
+  | 'Finalist'
+  | 'Recognition'
+  | 'Certification'
+  | string;
+
+export interface AchievementItem {
   id: string;
   title: Localized<string>;
+  result: AchievementResult;
   issuer: string;
-  year: string;
-  platform: AchievementPlatform;
-  url: string;
+  location?: string;
+  date: string;
+  year: number;
+  category: AchievementCategory;
+  context: Localized<string>;
+  relatedProjectSlug?: string;
+  relatedLeadershipId?: string;
+  proofUrl?: string;
+  url?: string;
+  platform?: AchievementPlatform | string;
+  featured?: boolean;
+  verified?: boolean;
+  relatedSkillIds?: string[];
   isAward?: boolean;
   awardRank?: string;
   credentialId?: string;
   badge?: string;
-  verified: boolean;
-  relatedSkillIds: string[];
 }
+
+export type CertificateItem = AchievementItem;
 
 export interface ExternalLinkItem {
   id: string;
