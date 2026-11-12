@@ -10,7 +10,7 @@ export const engineeringMilestonesData: EngineeringMilestone[] = [
     },
     description: {
       en: 'National Student Entrepreneur Status (SNEE, cohort #1, Jul 2023) & incubated IoT/ML platform.',
-      fr: 'Statut National Étudiant Entrepreneur (SNEE promo #1, juil 2023) & plateforme IoT/ML.',
+      fr: 'Statut National Étudiant Entrepreneur (SNEE promo #1, juil 2023) & incubation de la plateforme IoT/ML.',
     },
     link: {
       label: { en: 'View OXIT Platform', fr: 'Voir la plateforme OXIT' },
@@ -22,12 +22,12 @@ export const engineeringMilestonesData: EngineeringMilestone[] = [
     id: 'milestone-dash-start',
     period: 'Feb 2026',
     title: {
-      en: 'Sole DevOps Engineer on DASH',
+      en: 'Started as Sole DevOps Engineer on DASH',
       fr: 'Unique Ingénieure DevOps sur DASH',
     },
     description: {
-      en: 'Took complete ownership of CI/CD, automated Vercel releases, and containerized pipelines.',
-      fr: 'Responsable unique de la CI/CD, des déploiements Vercel et de la conteneurisation.',
+      en: 'Took ownership of CI/CD, automated Vercel releases, containerized pipelines, and EXPA OAuth 2.0 integration.',
+      fr: 'Prise en charge de la CI/CD, des déploiements Vercel, de la conteneurisation et de l’intégration OAuth 2.0 EXPA.',
     },
     link: {
       label: { en: 'View DASH Architecture', fr: 'Voir l’architecture DASH' },
@@ -60,8 +60,8 @@ export const engineeringMilestonesData: EngineeringMilestone[] = [
       fr: 'Dejitalist Déployé en Production sur Vercel',
     },
     description: {
-      en: 'Shipped multi-tenant e-commerce platform with automated payments, marketplaces, and KVKK compliance.',
-      fr: 'Livraison de la plateforme multi-tenant avec paiements, marketplaces et conformité KVKK.',
+      en: 'Shipped multi-tenant e-commerce SaaS with automated payments, marketplaces, and KVKK compliance.',
+      fr: 'Livraison du SaaS e-commerce multi-tenant avec paiements, marketplaces et conformité KVKK.',
     },
     link: {
       label: { en: 'View Dejitalist', fr: 'Voir Dejitalist' },
@@ -73,12 +73,12 @@ export const engineeringMilestonesData: EngineeringMilestone[] = [
     id: 'milestone-aiesec-greece',
     period: 'Jul 2026',
     title: {
-      en: 'Director of Information Management, AIESEC in Greece',
-      fr: 'Directrice de la Gestion de l’Information, AIESEC en Grèce',
+      en: 'Took Ownership of Hosting & Security for AIESEC in Greece',
+      fr: 'Prise en Charge de l’Hébergement & Sécurité pour AIESEC en Grèce',
     },
     description: {
-      en: 'Took ownership of hosting, server administration, availability, and access security.',
-      fr: 'Prise en charge de l’hébergement, de l’administration serveur et de la sécurité des accès.',
+      en: 'Director of Information Management: server administration, deployments across multiple sites, and access security.',
+      fr: 'Directrice de la Gestion de l’Information : administration serveur, déploiements multi-sites et sécurisation des accès.',
     },
     link: {
       label: { en: 'View Role Details', fr: 'Voir les détails du rôle' },
@@ -90,7 +90,7 @@ export const engineeringMilestonesData: EngineeringMilestone[] = [
     id: 'milestone-certifications',
     period: 'Oct – Nov 2026',
     title: {
-      en: 'Hedera HCDA/HCF & AWS Academy Credentials',
+      en: 'Hedera HCDA/HCF & AWS Academy Certifications',
       fr: 'Certifications Hedera HCDA/HCF & AWS Academy',
     },
     description: {
@@ -99,7 +99,7 @@ export const engineeringMilestonesData: EngineeringMilestone[] = [
     },
     link: {
       label: { en: 'View Verified Credentials', fr: 'Voir les certifications' },
-      href: '/skills#certifications-heading',
+      href: '/achievements?category=certifications',
       type: 'cert',
     },
   },
@@ -118,16 +118,20 @@ export const experienceData: ExperienceItem[] = [
     start: 'Jul 2026',
     end: 'Present',
     period: 'Jul 2026 – Present',
+    duration: {
+      en: '5 mos',
+      fr: '5 mois',
+    },
     isCurrent: true,
     summary: {
-      en: 'Own hosting, server administration, and security for the national entity web services while building internal tools that automate data workflows.',
-      fr: 'Responsable de l’hébergement, de l’administration serveur et de la sécurité des services web tout en développant des outils d’automatisation.',
+      en: 'Own hosting, server administration, and security for the national organization’s web services while building internal tools that automate data workflows.',
+      fr: 'Responsable de l’hébergement, de l’administration serveur et de la sécurité des services web nationaux tout en développant des outils d’automatisation.',
     },
     highlights: {
       en: [
-        'Own hosting and server administration for the organization’s web services: deployments, availability, and environment configuration across multiple sites.',
-        'Secure servers and hosted applications through strict access management and security practices.',
-        'Design, build, and maintain internal websites and tools that automate data workflows and daily operations; ship to production and handle releases and troubleshooting.',
+        'Own hosting and server administration for the organization’s web services: deployments, availability and environment configuration across multiple sites.',
+        'Secure servers and hosted applications through access management and security practices.',
+        'Design, build and maintain internal websites and tools that automate data workflows and daily operations; ship to production and handle releases and troubleshooting.',
         'Work remotely with national and local teams to turn operational needs into technical solutions.',
       ],
       fr: [
@@ -139,9 +143,9 @@ export const experienceData: ExperienceItem[] = [
     },
     bullets: {
       en: [
-        'Own hosting and server administration for the organization’s web services: deployments, availability, and environment configuration across multiple sites.',
-        'Secure servers and hosted applications through strict access management and security practices.',
-        'Design, build, and maintain internal websites and tools that automate data workflows and daily operations; ship to production and handle releases and troubleshooting.',
+        'Own hosting and server administration for the organization’s web services: deployments, availability and environment configuration across multiple sites.',
+        'Secure servers and hosted applications through access management and security practices.',
+        'Design, build and maintain internal websites and tools that automate data workflows and daily operations; ship to production and handle releases and troubleshooting.',
         'Work remotely with national and local teams to turn operational needs into technical solutions.',
       ],
       fr: [
@@ -151,7 +155,7 @@ export const experienceData: ExperienceItem[] = [
         'Collaboration à distance avec les équipes nationales et locales pour convertir les besoins opérationnels en solutions techniques.',
       ],
     },
-    tech: ['Linux', 'Server Administration', 'Access Management', 'Full-Stack Web', 'Automation'],
+    tech: ['Linux', 'Server Administration', 'Access Management', 'Full-Stack Web'],
     tags: ['Linux', 'Server Administration', 'Access Management', 'Full-Stack Web'],
     relatedProjectSlugs: [],
     categories: ['devops-cloud', 'fullstack'],
@@ -170,6 +174,10 @@ export const experienceData: ExperienceItem[] = [
     start: 'Jul 2026',
     end: 'Aug 2026',
     period: 'Jul 2026 – Aug 2026',
+    duration: {
+      en: '2 mos',
+      fr: '2 mois',
+    },
     summary: {
       en: 'Built and deployed Dejitalist, an autonomous multi-tenant e-commerce SaaS monorepo integrating Turkish payment gateways, marketplaces, and automated order fulfillment.',
       fr: 'Développement et déploiement de Dejitalist, plateforme SaaS e-commerce multi-tenant intégrant passerelles de paiement turques, marketplaces et gestion automatisée.',
@@ -177,7 +185,7 @@ export const experienceData: ExperienceItem[] = [
     highlights: {
       en: [
         'Built Dejitalist, a multi-tenant e-commerce SaaS with a merchant dashboard and a public storefront per store, deployed live on Vercel.',
-        'Implemented payments (iyzico, PayTR), marketplace integrations (Trendyol, Hepsiburada, N11), a unified order inbox, shipping integration, email notifications, and KVKK compliance.',
+        'Implemented payments (iyzico, PayTR), marketplace integrations (Trendyol, Hepsiburada, N11), a unified order inbox, shipping integration, email notifications and KVKK compliance.',
       ],
       fr: [
         'Conception de Dejitalist, SaaS e-commerce multi-tenant avec espace d’administration marchand et vitrines publiques dédiées, déployé sur Vercel.',
@@ -187,7 +195,7 @@ export const experienceData: ExperienceItem[] = [
     bullets: {
       en: [
         'Built Dejitalist, a multi-tenant e-commerce SaaS with a merchant dashboard and a public storefront per store, deployed live on Vercel.',
-        'Implemented payments (iyzico, PayTR), marketplace integrations (Trendyol, Hepsiburada, N11), a unified order inbox, shipping integration, email notifications, and KVKK compliance.',
+        'Implemented payments (iyzico, PayTR), marketplace integrations (Trendyol, Hepsiburada, N11), a unified order inbox, shipping integration, email notifications and KVKK compliance.',
       ],
       fr: [
         'Conception de Dejitalist, SaaS e-commerce multi-tenant avec espace d’administration marchand et vitrines publiques dédiées, déployé sur Vercel.',
@@ -207,20 +215,24 @@ export const experienceData: ExperienceItem[] = [
       en: 'DevOps Engineer Intern',
       fr: 'Stagiaire Ingénieure DevOps',
     },
-    organization: 'AIESEC in Tunisia (National Operations)',
+    organization: 'AIESEC Tunisia',
     location: 'Remote',
     workMode: 'Remote',
     start: 'Feb 2026',
     end: 'Aug 2026',
     period: 'Feb 2026 – Aug 2026',
+    duration: {
+      en: '7 mos',
+      fr: '7 mois',
+    },
     summary: {
       en: 'Served as sole DevOps engineer on the DASH analytics platform connecting to EXPA via OAuth 2.0 and serving 600+ Tunisian members and 2,000+ international users.',
       fr: 'Unique ingénieure DevOps sur la plateforme analytique DASH reliée à EXPA via OAuth 2.0 au service de 600+ membres en Tunisie et 2 000+ à l’international.',
     },
     highlights: {
       en: [
-        'Sole DevOps engineer in a two-person technical team on DASH, serving 600+ users in Tunisia and 2,000+ internationally, integrated with AIESEC’s EXPA system through OAuth 2.0.',
-        'Built and maintained GitHub Actions CI/CD pipelines (lint, test, build, audit, deploy) with continuous deployment to Vercel; managed containerized deployment, monitoring, and workflow automation.',
+        'Sole DevOps engineer in a two-person technical team on DASH, serving 600+ users in Tunisia and 2,000+ internationally, integrated with AIESEC\'s EXPA system through OAuth 2.0.',
+        'Built and maintained GitHub Actions CI/CD pipelines (lint, test, build, audit, deploy) with continuous deployment to Vercel; managed containerized deployment, monitoring and workflow automation.',
         'Supported API integration and backend communication between services; worked agile across a distributed international team.',
       ],
       fr: [
@@ -231,8 +243,8 @@ export const experienceData: ExperienceItem[] = [
     },
     bullets: {
       en: [
-        'Sole DevOps engineer in a two-person technical team on DASH, serving 600+ users in Tunisia and 2,000+ internationally, integrated with AIESEC’s EXPA system through OAuth 2.0.',
-        'Built and maintained GitHub Actions CI/CD pipelines (lint, test, build, audit, deploy) with continuous deployment to Vercel; managed containerized deployment, monitoring, and workflow automation.',
+        'Sole DevOps engineer in a two-person technical team on DASH, serving 600+ users in Tunisia and 2,000+ internationally, integrated with AIESEC\'s EXPA system through OAuth 2.0.',
+        'Built and maintained GitHub Actions CI/CD pipelines (lint, test, build, audit, deploy) with continuous deployment to Vercel; managed containerized deployment, monitoring and workflow automation.',
         'Supported API integration and backend communication between services; worked agile across a distributed international team.',
       ],
       fr: [
@@ -241,7 +253,7 @@ export const experienceData: ExperienceItem[] = [
         'Intégration d’APIs et interconnexion des microservices en environnement distribué agile international.',
       ],
     },
-    tech: ['React', 'Node.js', 'MongoDB', 'GitHub Actions', 'Docker', 'Vercel', 'OAuth 2.0'],
+    tech: ['React', 'Node.js', 'MongoDB', 'GitHub Actions', 'Docker', 'Vercel'],
     tags: ['React', 'Node.js', 'MongoDB', 'GitHub Actions', 'Docker', 'Vercel'],
     relatedProjectSlugs: ['dash-analytics-hub'],
     categories: ['devops-cloud', 'fullstack', 'data-ml'],
@@ -252,7 +264,7 @@ export const experienceData: ExperienceItem[] = [
     id: 'triweb-web-designer',
     role: {
       en: 'Web Designer',
-      fr: 'Web Designer & UI/UX',
+      fr: 'Web Designer',
     },
     organization: 'Triweb',
     location: 'Tunis, Tunisia',
@@ -260,10 +272,14 @@ export const experienceData: ExperienceItem[] = [
     start: 'Jun 2025',
     end: 'Jul 2025',
     period: 'Jun 2025 – Jul 2025',
+    duration: {
+      en: '2 mos',
+      fr: '2 mois',
+    },
     isCollapsible: true,
     summary: {
       en: 'Contributed to responsive, user-friendly website designs through wireframing, UI/UX planning, SEO optimization, and accessibility compliance.',
-      fr: 'Conception d’interfaces web responsives et ergonomiques : wireframing, planification UI/UX, SEO et conformité d’accessibilité.',
+      fr: 'Contribution à la conception de sites web responsives et ergonomiques : wireframing, planification UI/UX, SEO et conformité d’accessibilité.',
     },
     highlights: {
       en: [
@@ -271,7 +287,7 @@ export const experienceData: ExperienceItem[] = [
         'Applied SEO best practices and accessibility standards; used Adobe Photoshop and Illustrator.',
       ],
       fr: [
-        'Contribution à la conception de sites web responsives et ergonomiques : wireframing et maquettage UI/UX en lien avec les développeurs.',
+        'Contribution à la conception de sites web responsives et ergonomiques : wireframing et maquettage UI/UX en lien avec les équipes de développement.',
         'Application des standards d’accessibilité et de référencement naturel (SEO) avec Adobe Photoshop et Illustrator.',
       ],
     },
@@ -281,12 +297,12 @@ export const experienceData: ExperienceItem[] = [
         'Applied SEO best practices and accessibility standards; used Adobe Photoshop and Illustrator.',
       ],
       fr: [
-        'Contribution à la conception de sites web responsives et ergonomiques : wireframing et maquettage UI/UX en lien avec les développeurs.',
+        'Contribution à la conception de sites web responsives et ergonomiques : wireframing et maquettage UI/UX en lien avec les équipes de développement.',
         'Application des standards d’accessibilité et de référencement naturel (SEO) avec Adobe Photoshop et Illustrator.',
       ],
     },
     tech: ['UI/UX Wireframing', 'Adobe Photoshop', 'Adobe Illustrator', 'SEO', 'Web Accessibility'],
-    tags: ['UI/UX Wireframing', 'Adobe Photoshop', 'Adobe Illustrator', 'SEO', 'Accessibility'],
+    tags: ['UI/UX Wireframing', 'Adobe Photoshop', 'Adobe Illustrator', 'SEO', 'Web Accessibility'],
     relatedProjectSlugs: [],
     categories: ['fullstack'],
     category: 'work',
@@ -304,9 +320,13 @@ export const experienceData: ExperienceItem[] = [
     start: 'Jan 2024',
     end: 'May 2024',
     period: 'Jan 2024 – May 2024',
+    duration: {
+      en: '5 mos',
+      fr: '5 mois',
+    },
     summary: {
       en: 'Engineered the mobile application and IoT-to-cloud telemetry workflow connecting seven environmental sensors for the OXIT smart irrigation platform.',
-      fr: 'Développement de l’application mobile et du pipeline de télémétrie reliant sept capteurs environnementaux pour la plateforme d’irrigation OXIT.',
+      fr: 'Développement de l’application mobile et du flux de télémétrie IoT-vers-cloud reliant sept capteurs environnementaux pour la plateforme d’irrigation OXIT.',
     },
     highlights: {
       en: [
@@ -315,9 +335,9 @@ export const experienceData: ExperienceItem[] = [
         'Collaborated on predictive irrigation models using historical data and ML; delivered a prototype with dashboards and alerts.',
       ],
       fr: [
-        'Sur OXIT : développement de l’application mobile Flutter avec Firebase pour les données temps réel et l’authentification.',
-        'Conception du flux IoT-vers-cloud reliant sept capteurs environnementaux (humidité du sol, température, eau) et traitement des flux de données.',
-        'Contribution aux modèles d’irrigation prédictive par machine learning et livraison d’un prototype fonctionnel avec alertes.',
+        'Sur OXIT : développement de l’application mobile Flutter avec Firebase pour les données temps réel et la gestion des utilisateurs.',
+        'Conception du flux IoT-vers-cloud reliant sept capteurs environnementaux (humidité du sol, température, niveau d’eau) et traitement des flux de données.',
+        'Contribution aux modèles d’irrigation prédictive par machine learning et livraison d’un prototype fonctionnel avec tableaux de bord et alertes.',
       ],
     },
     bullets: {
@@ -327,12 +347,12 @@ export const experienceData: ExperienceItem[] = [
         'Collaborated on predictive irrigation models using historical data and ML; delivered a prototype with dashboards and alerts.',
       ],
       fr: [
-        'Sur OXIT : développement de l’application mobile Flutter avec Firebase pour les données temps réel et l’authentification.',
-        'Conception du flux IoT-vers-cloud reliant sept capteurs environnementaux (humidité du sol, température, eau) et traitement des flux de données.',
-        'Contribution aux modèles d’irrigation prédictive par machine learning et livraison d’un prototype fonctionnel avec alertes.',
+        'Sur OXIT : développement de l’application mobile Flutter avec Firebase pour les données temps réel et la gestion des utilisateurs.',
+        'Conception du flux IoT-vers-cloud reliant sept capteurs environnementaux (humidité du sol, température, niveau d’eau) et traitement des flux de données.',
+        'Contribution aux modèles d’irrigation prédictive par machine learning et livraison d’un prototype fonctionnel avec tableaux de bord et alertes.',
       ],
     },
-    tech: ['Flutter', 'Firebase', 'IoT', 'Python', 'Machine Learning'],
+    tech: ['Flutter', 'Firebase', 'IoT', 'Python', 'ML'],
     tags: ['Flutter', 'Firebase', 'IoT', 'Python', 'ML'],
     relatedProjectSlugs: ['oxit-smart-agriculture'],
     categories: ['fullstack', 'data-ml', 'iot'],
@@ -351,10 +371,14 @@ export const experienceData: ExperienceItem[] = [
     start: 'Aug 2023',
     end: 'Sep 2023',
     period: 'Aug 2023 – Sep 2023',
+    duration: {
+      en: '2 mos',
+      fr: '2 mois',
+    },
     isCollapsible: true,
     summary: {
-      en: 'Engineered a full-stack hotel management and booking web application using Angular and Spring Boot with RESTful backend services.',
-      fr: 'Développement d’une application web de gestion hôtelière et réservation avec Angular et Spring Boot.',
+      en: 'Built a full-stack hotel website with Angular and Spring Boot: responsive UI components, RESTful APIs, database design for hotel data; deployed the application.',
+      fr: 'Développement d’un site hôtelier complet sous Angular et Spring Boot : interfaces responsives, APIs RESTful, modélisation de base de données et déploiement.',
     },
     highlights: {
       en: [
@@ -372,8 +396,8 @@ export const experienceData: ExperienceItem[] = [
         'Développement d’un site hôtelier complet sous Angular et Spring Boot : interfaces responsives, APIs RESTful, modélisation de base de données et déploiement.',
       ],
     },
-    tech: ['Angular', 'Spring Boot', 'REST APIs', 'MySQL'],
-    tags: ['Angular', 'Spring Boot', 'REST APIs', 'MySQL'],
+    tech: ['Angular', 'Spring Boot'],
+    tags: ['Angular', 'Spring Boot'],
     relatedProjectSlugs: [],
     categories: ['fullstack'],
     category: 'work',

@@ -164,6 +164,7 @@ export interface ExperienceItem {
   start: string;
   end: string;
   period: string;
+  duration?: Localized<string>;
   summary: Localized<string>;
   highlights: Localized<string[]>;
   bullets: Localized<string[]>;

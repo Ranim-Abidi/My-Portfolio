@@ -170,7 +170,8 @@ export default function CommandPalette() {
       id: `exp-${e.id}`,
       type: 'page' as const,
       title: `${t(e.role)} — ${e.organization}`,
-      subtitle: `${e.period} · /experience`,
+      subtitle: `${e.period} · ${e.workMode} · /experience`,
+      keywords: `${t(e.summary)} ${t(e.highlights).join(' ')} ${e.tech.join(' ')} ${e.organization} ${e.location}`,
       icon: <Briefcase className="w-4 h-4 text-emerald-400" />,
       action: () => router.push(`/experience#${e.id}`),
     })),
@@ -239,7 +240,8 @@ export default function CommandPalette() {
     return (
       item.title.toLowerCase().includes(q) ||
       item.subtitle?.toLowerCase().includes(q) ||
-      item.type.toLowerCase().includes(q)
+      item.type.toLowerCase().includes(q) ||
+      (item as any).keywords?.toLowerCase().includes(q)
     );
   }).slice(0, 8); // max 8 visible items
 
