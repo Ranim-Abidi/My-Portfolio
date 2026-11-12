@@ -60,7 +60,7 @@ function SkillsContent() {
   const relatedProjects = projects.filter(
     (p) =>
       selectedSkill.projectSlugs.includes(p.slug) ||
-      p.relatedSkillIds.includes(selectedSkill.id) ||
+      (p.relatedSkillIds && p.relatedSkillIds.includes(selectedSkill.id)) ||
       p.tags.some((t) => t.toLowerCase() === selectedSkill.name.toLowerCase())
   );
 

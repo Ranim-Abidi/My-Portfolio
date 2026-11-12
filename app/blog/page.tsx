@@ -79,7 +79,7 @@ const posts: BlogPost[] = [
         fr: 'Séparer le dépôt applicatif du dépôt de manifestes prévient les boucles de déclenchement infinies.',
       },
     ],
-    relatedSlug: 'cloudnative-gitops-k8s',
+    relatedSlug: 'matchy-khedma-cloud',
   },
   {
     slug: 'devops-mindset-in-nonprofit-governance',

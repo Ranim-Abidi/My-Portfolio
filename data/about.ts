@@ -94,10 +94,10 @@ export const askMeAboutData: AskMeAboutData = {
       },
       projectLink: {
         label: {
-          en: 'Explore GitOps Infrastructure Blueprint',
-          fr: '',
+          en: 'Explore Private Cloud Infrastructure Blueprint',
+          fr: 'Explorer le plan d\'architecture Cloud Privé',
         },
-        href: '/projects/cloudnative-gitops-k8s',
+        href: '/projects/matchy-khedma-cloud',
       },
     },
     {
@@ -107,7 +107,7 @@ export const askMeAboutData: AskMeAboutData = {
         fr: '',
       },
       answer: {
-        en: 'I structure microservices into parameterised Helm charts and maintain cluster deployments declaratively through ArgoCD, prioritizing zero-downtime rolling upgrades and self-healing pods.',
+        en: 'I structure microservices into parameterised Helm charts and deploy containerized workloads across managed and private Kubernetes clusters with active monitoring and self-healing pods.',
         fr: '',
       },
       projectLink: {
@@ -115,7 +115,7 @@ export const askMeAboutData: AskMeAboutData = {
           en: 'View Kubernetes Orchestration Case Study',
           fr: '',
         },
-        href: '/projects/cloudnative-gitops-k8s',
+        href: '/projects/matchy-khedma-cloud',
       },
     },
     {
@@ -133,7 +133,7 @@ export const askMeAboutData: AskMeAboutData = {
           en: 'See Automated Pipeline Architecture',
           fr: '',
         },
-        href: '/projects/cloudnative-gitops-k8s',
+        href: '/projects/dash-analytics-hub',
       },
     },
     {
@@ -148,10 +148,10 @@ export const askMeAboutData: AskMeAboutData = {
       },
       projectLink: {
         label: {
-          en: 'Browse Related Applied AI Projects',
+          en: 'Browse OXIT Smart Agriculture Platform',
           fr: '',
         },
-        href: '/projects/eleganza-idss-ml',
+        href: '/projects/oxit-smart-agriculture',
       },
     },
     {

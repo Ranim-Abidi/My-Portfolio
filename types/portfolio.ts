@@ -75,6 +75,19 @@ export interface SkillCategory {
 
 export type ProjectCategory = 'cloud' | 'fullstack' | 'aiml' | 'data';
 
+export type ProjectStatus =
+  | 'Live & Operational'
+  | 'Academic'
+  | 'Freelance'
+  | 'Founder'
+  | 'Personal';
+
+export interface ProjectLinks {
+  live?: string;
+  repo?: string;
+  caseStudy?: string;
+}
+
 export interface ProjectCaseStudy {
   overview: Localized<string>;
   architectureNotes: Localized<string[]>;
@@ -90,15 +103,24 @@ export interface ProjectItem {
   id: string;
   slug: string;
   title: string;
-  pitch: Localized<string>;
+  tagline: Localized<string>;
+  description: Localized<string>;
+  role: Localized<string>;
+  status: ProjectStatus;
+  categories: ProjectCategory[];
   category: ProjectCategory;
+  techStack: string[];
+  tags: string[];
+  highlights: Localized<string[]>;
+  links?: ProjectLinks;
   featured: boolean;
-  featuredRank?: number; // 1, 2, 3 for Home page top 3
+  featuredRank?: number;
+  period?: string;
+  pitch: Localized<string>;
   problem: Localized<string>;
   solution: Localized<string>;
   impact: Localized<string>;
-  tags: string[];
-  cover: string;
+  cover?: string;
   screenshots?: string[];
   liveUrl?: string;
   healthEndpoint?: string;
@@ -156,7 +178,7 @@ export interface CertificateItem {
   credentialId?: string;
   badge?: string;
   verified: boolean;
-  relatedSkillIds?: string[];
+  relatedSkillIds: string[];
 }
 
 export interface ExternalLinkItem {
