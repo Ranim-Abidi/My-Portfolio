@@ -400,7 +400,7 @@ export const skillCategoriesData: SkillCategory[] = [
           {
             id: 'aiesec-greece',
             title: 'AIESEC in Greece (Access Management)',
-            href: '/experience',
+            href: '/experience#aiesec-greece-im',
             type: 'role',
           },
         ],
@@ -420,7 +420,7 @@ export const skillCategoriesData: SkillCategory[] = [
           {
             id: 'aiesec-greece',
             title: 'AIESEC in Greece (Directory Permissions)',
-            href: '/experience',
+            href: '/experience#aiesec-greece-im',
             type: 'role',
           },
         ],
@@ -475,7 +475,7 @@ export const skillCategoriesData: SkillCategory[] = [
           {
             id: 'aiesec-greece',
             title: 'AIESEC in Greece (Server Administration)',
-            href: '/experience',
+            href: '/experience#aiesec-greece-im',
             type: 'role',
           },
         ],
@@ -1425,5 +1425,78 @@ export const spokenLanguagesData = [
     language: { en: 'Italian', fr: 'Italien' },
     level: { en: 'A2, Elementary', fr: 'A2, Élémentaire' },
     badge: 'A2',
+  },
+];
+
+export interface SkillCertification {
+  id: string;
+  title: { en: string; fr: string };
+  issuer: string;
+  year: string;
+  platform: string;
+  url: string;
+  skills: string[];
+}
+
+export const verifiedCertificationsData: SkillCertification[] = [
+  {
+    id: 'cert-aws-academy',
+    title: {
+      en: 'AWS Academy Graduate: Cloud Operations & Cloud Security Foundations',
+      fr: 'Diplômée AWS Academy : Cloud Operations & Fondations Sécurité Cloud',
+    },
+    issuer: 'AWS Academy',
+    year: '2026',
+    platform: 'Credly',
+    url: 'https://www.credly.com/users/ranim-abidi',
+    skills: ['AWS (EC2, S3)', 'Microsoft Azure (VMs, IAM, networking)', 'IAM', 'RBAC'],
+  },
+  {
+    id: 'cert-hedera-hcda-hcf',
+    title: {
+      en: 'Hedera Certified: Developer Associate (HCDA) & Foundation (HCF)',
+      fr: 'Certifiée Hedera : Developer Associate (HCDA) & Foundation (HCF)',
+    },
+    issuer: 'Hedera Hashgraph',
+    year: '2026',
+    platform: 'Credly',
+    url: 'https://www.credly.com/users/ranim-abidi',
+    skills: ['JavaScript', 'TypeScript', 'Node.js', 'REST APIs'],
+  },
+  {
+    id: 'cert-gcp-badges',
+    title: {
+      en: 'Google Cloud Skill Badges: Cloud DevOps & Data/ML Tracks',
+      fr: 'Badges Google Cloud : Parcours Cloud DevOps & Data/ML',
+    },
+    issuer: 'Google Cloud',
+    year: '2024',
+    platform: 'Credly',
+    url: 'https://www.credly.com/users/ranim-abidi',
+    skills: ['Google Cloud', 'Kubernetes', 'Docker', 'GitHub Actions', 'Pandas'],
+  },
+  {
+    id: 'cert-ibm-data',
+    title: {
+      en: 'IBM SkillsBuild: Data Analytics Track',
+      fr: 'IBM SkillsBuild : Parcours Analyse de Données',
+    },
+    issuer: 'IBM',
+    year: '2025',
+    platform: 'Credly',
+    url: 'https://www.credly.com/users/ranim-abidi',
+    skills: ['Python', 'SQL', 'Pandas', 'Scikit-learn', 'Power BI'],
+  },
+  {
+    id: 'cert-flutter-google',
+    title: {
+      en: 'Flutter Development (Google)',
+      fr: 'Développement Flutter (Google)',
+    },
+    issuer: 'Google',
+    year: '2024',
+    platform: 'Credly',
+    url: 'https://www.credly.com/users/ranim-abidi',
+    skills: ['Flutter', 'Firebase', 'REST APIs', 'UI/UX wireframing'],
   },
 ];

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
 import { portfolioData } from '@/data/portfolio';
-import { coreFocusSkills, spokenLanguagesData } from '@/data/skills';
+import { coreFocusSkills, spokenLanguagesData, verifiedCertificationsData } from '@/data/skills';
 import { SkillCategory, SkillItem } from '@/types/portfolio';
 import {
   Cpu,
@@ -345,28 +345,50 @@ function SkillsContent() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {certificates.map((cert) => (
-              <a
+            {verifiedCertificationsData.map((cert) => (
+              <div
                 key={cert.id}
-                href={cert.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)] hover:border-amber-500/40 transition-colors group flex flex-col justify-between focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+                className="p-5 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)] hover:border-amber-500/40 transition-colors group flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between text-[11px] font-mono text-[var(--text-muted)] mb-1">
-                    <span>{cert.issuer}</span>
+                  <div className="flex items-center justify-between text-[11px] font-mono text-[var(--text-muted)] mb-1.5">
+                    <span className="font-semibold text-amber-400/90">{cert.issuer}</span>
                     <span>{cert.year}</span>
                   </div>
-                  <h3 className="font-display font-bold text-xs sm:text-sm text-[var(--text-primary)] group-hover:text-amber-400 transition-colors line-clamp-2">
+                  <h3 className="font-display font-bold text-sm text-[var(--text-primary)] group-hover:text-amber-400 transition-colors leading-snug">
                     {t(cert.title)}
                   </h3>
+
+                  {/* Linked Skills */}
+                  <div className="flex flex-wrap items-center gap-1.5 mt-3">
+                    {cert.skills.map((sName, sIdx) => (
+                      <button
+                        key={sIdx}
+                        type="button"
+                        onClick={() => router.push(`/projects?search=${encodeURIComponent(sName)}`)}
+                        className="px-2 py-0.5 rounded text-[10px] font-mono bg-black/5 dark:bg-white/5 border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-cyan-400 hover:border-cyan-500/40 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400"
+                        title={`${language === 'en' ? 'Filter projects using' : 'Filtrer les projets utilisant'} ${sName}`}
+                      >
+                        {sName}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex items-center justify-between pt-3 mt-3 border-t border-[var(--border-color)] text-[10px] font-mono text-cyan-400">
-                  <span>{cert.platform}</span>
-                  <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+
+                <div className="flex items-center justify-between pt-3 mt-4 border-t border-[var(--border-color)] text-[11px] font-mono">
+                  <span className="text-[var(--text-muted)]">{cert.platform}</span>
+                  <a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 font-semibold focus-visible:underline focus-visible:outline-none"
+                    aria-label={`Verify ${t(cert.title)} on ${cert.platform}`}
+                  >
+                    <span>{language === 'en' ? 'Verify on Credly' : 'Vérifier sur Credly'}</span>
+                    <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  </a>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </section>
